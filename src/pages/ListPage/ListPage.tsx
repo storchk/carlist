@@ -1,7 +1,9 @@
 import { useQuery } from '@apollo/client'
+import { filter } from 'lodash'
 import { useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+import { Button } from '../../components/Atoms/Button'
 import { Heading } from '../../components/Atoms/Typography'
 import { CarCard } from '../../components/Molecules/CarCard'
 import { useAppContext } from '../../context'
@@ -11,8 +13,6 @@ import { Gear } from '../../types'
 import { Filter } from './components/Filter'
 import { StyledCarList, StyledListPage, StyledLoadMoreArea } from './ListPage.styled'
 import { mapConsumptionToString, mapFuelTypeToName } from './ListPage.utils'
-import { Button } from '../../components/Atoms/Button'
-import { filter } from 'lodash'
 
 export const ListPage = (): JSX.Element => {
   const { cars, filteredCars, setCars } = useAppContext()

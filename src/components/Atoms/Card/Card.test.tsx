@@ -8,7 +8,7 @@ const { render, screen, renderer } = testing
 const mockText = 'Lorem Ipsum'
 
 const renderComponent = (props?: Partial<CardProps>) => render(<Card {...props}>{mockText}</Card>)
-describe('Atoms: Card', () => {
+describe('atoms: Card', () => {
   it('should render button with text', () => {
     renderComponent()
     const text = screen.getByText(/Lorem Ipsum/i)

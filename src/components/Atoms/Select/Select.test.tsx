@@ -23,7 +23,7 @@ const component = (
 )
 
 const renderComponent = () => render(component)
-describe('Atoms: Select', () => {
+describe('atoms: Select', () => {
   it('should render Select with text', () => {
     renderComponent()
     const text = screen.getByText(/Lorem Ipsum/i)

@@ -1,5 +1,6 @@
 import _ from 'lodash'
 
+import type { Offer } from '../../types'
 import type { AppStateType } from '../Context.types'
 import type {
   ReducerAction,
@@ -8,7 +9,6 @@ import type {
   SetFilterCarsAction,
 } from './reducer.types'
 import { ActionType } from './reducer.types'
-import { Offer } from '../../types'
 
 function getUniqueCars(cars: Offer[]) {
   return Array.from(new Set(cars.map(car => car.id)))

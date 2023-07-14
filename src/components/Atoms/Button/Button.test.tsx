@@ -9,7 +9,7 @@ const label = 'Hello world! I am using React'
 
 const renderComponent = (props?: Partial<ButtonProps>) =>
   render(<Button label={label} {...props} />)
-describe('Atoms: Button', () => {
+describe('atoms: Button', () => {
   it('should render button with text', () => {
     renderComponent()
     const text = screen.getByText(/Hello world! I am using React/i)
@@ -21,7 +21,7 @@ describe('Atoms: Button', () => {
     expect(view).toMatchSnapshot()
   })
 
-  it('A11y - No violations detected', async () => {
+  it('a11y - No violations detected', async () => {
     const { container } = renderComponent()
     await expect(axe(container)).resolves.toHaveNoViolations()
   })

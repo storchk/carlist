@@ -1,1 +1,2 @@
 graphql/__generated__/**.*
+src/typings.d.ts

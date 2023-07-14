@@ -9,7 +9,7 @@ const label = 'Lorem Ipsum'
 
 const renderComponent = (props?: Partial<BadgeProps>) => render(<Badge label={label} {...props} />)
 
-describe('Atoms: Badge', () => {
+describe('atoms: Badge', () => {
   it('should render badge with text', () => {
     renderComponent()
     const text = screen.getByText(/Lorem Ipsum/i)

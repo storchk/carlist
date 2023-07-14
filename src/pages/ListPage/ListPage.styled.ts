@@ -11,10 +11,11 @@ export const StyledListPage = styled.main(
       flex-direction: row;
     }
 
-    margin: ${theme.spacing.lg} ${({ theme }) => theme.spacing.md};
+    margin: ${theme.spacing.lg} ${theme.spacing.md};
+    padding-bottom: ${theme.spacing.lg};
 
     ${mediaQuery.lg} {
-      margin: ${theme.spacing.lg} ${({ theme }) => theme.spacing.xxxxl};
+      margin: ${theme.spacing.lg} ${theme.spacing.xxxxl};
     }
 
     aside {
