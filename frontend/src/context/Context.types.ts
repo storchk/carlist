@@ -1,4 +1,4 @@
-import { Car } from '@/graphql'
+import type { Car } from '@/graphql'
 
 export type FilterableValues = 'brand' | 'model' | 'color' | 'drivetrain.fuel.type'
 export type SetCarsType = Car[]

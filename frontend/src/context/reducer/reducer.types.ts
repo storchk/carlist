@@ -1,4 +1,5 @@
-import type { Offer } from '../../types'
+import type { Car } from '@/graphql'
+
 import type { FilterableValues } from '../Context.types'
 
 export enum ActionType {
@@ -11,7 +12,7 @@ export enum ActionType {
 export type SetCarsAction = {
   type: ActionType.SetCars
   payload: {
-    cars: Offer[]
+    cars: Car[]
   }
 }
 

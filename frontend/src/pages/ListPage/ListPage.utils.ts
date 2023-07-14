@@ -1,4 +1,4 @@
-import { Car } from '@/graphql'
+import type { Car } from '@/graphql'
 
 export function getAllModels(cars: Car[]) {
   const items = cars.map(car => car.model)

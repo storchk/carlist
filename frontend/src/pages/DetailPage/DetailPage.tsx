@@ -1,15 +1,20 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
+import { useGetCarQuery } from '@/graphql'
 
 import { Badge } from '../../components/Atoms/Badge'
 import { Heading } from '../../components/Atoms/Typography'
 import { Gallery } from '../../components/Organism/Gallery'
-import { useGetCarQuery } from '@/graphql'
 import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
 
 export const DetailPage = (): JSX.Element => {
   const { id = '' } = useParams()
-  const { data } = useGetCarQuery({ variables: { id } })
-  if (!data?.car) return <Navigate to="/" />
+  const { data, loading, error } = useGetCarQuery({ variables: { id } })
+
+  if (loading) return <div>Loading...</div>
+  if (!data?.car) return <div>no data</div>
+  if (error) return <p>{error.message}</p>
+
   const { brand, model, drivetrain, performance, media } = data.car
 
   return (
