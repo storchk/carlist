@@ -41,7 +41,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile --prefix frontend
 
       - name: Run lintings
-        run: pnpm lint --prefix frontend
+        run: pnpm run --prefix frontend lint
 
   Typecheck:
     runs-on: ubuntu-latest
@@ -80,4 +80,4 @@ jobs:
         run: pnpm install --no-frozen-lockfile --prefix frontend
 
       - name: Run typescript check
-        run: pnpm typecheck --prefix frontend
+        run: pnpm run --prefix frontend typecheck
