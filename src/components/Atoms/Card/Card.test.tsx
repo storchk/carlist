@@ -20,7 +20,7 @@ describe('Atoms: Card', () => {
     expect(view).toMatchSnapshot()
   })
 
-  it('A11y - No violations detected', async () => {
+  it('a11y - No violations detected', async () => {
     const { container } = renderComponent()
     await expect(axe(container)).resolves.toHaveNoViolations()
   })
