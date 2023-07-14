@@ -1,13 +1,13 @@
-import { CarCardProps } from './CarCard.types'
+import { Badge } from '../../Atoms/Badge'
+import { Heading, Typography } from '../../Atoms/Typography'
 import {
   StyledCarCard,
   StyledCarCardContent,
-  StyledCarCardImage,
   StyledCarCardContentBadges,
   StyledCarCardContentCarInfo,
+  StyledCarCardImage,
 } from './CarCard.styled'
-import { Heading, Typography } from '../../Atoms/Typography'
-import { Badge } from '../../Atoms/Badge'
+import type { CarCardProps } from './CarCard.types'
 
 const disabledColor = 'contrast500'
 
@@ -19,6 +19,7 @@ export const CarCard = ({
   consumption,
   firstRegistration,
   performance,
+  gearbox,
 }: CarCardProps): JSX.Element => {
   return (
     <StyledCarCard>
@@ -30,6 +31,7 @@ export const CarCard = ({
         <StyledCarCardContentBadges>
           {fuel ? <Badge label={fuel} /> : null}
           {performance ? <Badge label={`${performance} PS`} /> : null}
+          {gearbox ? <Badge label={gearbox} /> : null}
         </StyledCarCardContentBadges>
 
         <StyledCarCardContentCarInfo>

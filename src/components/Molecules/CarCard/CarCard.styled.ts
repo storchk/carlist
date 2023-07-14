@@ -1,30 +1,29 @@
-import { StyledCard } from '../../Atoms/Card/Card.styled'
-import { mediaQuery } from '../../../styles'
 import styled, { css } from 'styled-components'
+
+import { StyledCard } from '../../Atoms/Card/Card.styled'
 
 export const StyledCarCard = styled(StyledCard)`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `
 export const StyledCarCardImage = styled.img`
   max-height: unset;
-
-  ${mediaQuery.md} {
-    max-height: 280px;
-  }
 `
 
 export const StyledCarCardContent = styled.div(
   ({ theme }) => css`
+    height: 100%;
     padding: ${theme.spacing.lg};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
   `
 )
 export const StyledCarCardContentBadges = styled.div(
   ({ theme }) => css`
     display: flex;
+    flex-wrap: wrap;
     gap: ${theme.spacing.sm};
     margin: ${theme.spacing.md} 0;
   `
