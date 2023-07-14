@@ -1,24 +1,21 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+## backend-for-frontend
+# Compiled JavaScript files
+backend-for-frontend/lib/**/*.js
+backend-for-frontend/lib/**/*.js.map
 
-node_modules
-dist
-dist-ssr
-*.local
+# TypeScript v1 declaration files
+backend-for-frontend/typings/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Node.js dependency directory
+backend-for-frontend/node_modules/
+frontend/node_modules/
+
+## General
+/node_modules/
+backend-for-frontend/ui-debug.log
+backend-for-frontend/firebase-debug.log
+firebase-debug.log
+
+backend-for-frontend/.runtimeconfig.json
+backend-for-frontend/env.json
+backend/node_modules
