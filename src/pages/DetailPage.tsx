@@ -1,7 +1,8 @@
-import { useParams, Navigate } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
+import type { Offer } from 'src/types'
+
 import { client } from '../apollo'
 import { Offer as OfferFragment } from '../graphql/fragments/Offer'
-import type { Offer } from 'src/types'
 
 export const DetailPage = (): JSX.Element => {
   const { id } = useParams()

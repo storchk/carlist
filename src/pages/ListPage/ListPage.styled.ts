@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import { mediaQuery } from '../../styles'
 
 export const StyledListPage = styled.main(
@@ -17,16 +18,35 @@ export const StyledListPage = styled.main(
     }
 
     aside {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       width: 100%;
+      gap: ${theme.spacing.md};
       max-height: 96vh;
-      position: sticky;
-      top: 90px;
-      left: 0;
-      right: 0;
-      z-index: 50;
+      margin-bottom: ${theme.spacing.xxl};
+      > * {
+        width: calc(50% - ${theme.spacing.sm});
 
-      ${mediaQuery.md} {
+        ${mediaQuery.sm} {
+          width: calc(33.333% - ${theme.spacing.sm});
+        }
+      }
+
+      ${mediaQuery.lg} {
+        flex-direction: column;
+        position: sticky;
+        top: 90px;
+        left: 0;
+        right: 0;
+        z-index: 50;
         width: 25%;
+        margin-top: ${theme.spacing.xxl};
+        margin-bottom: 0;
+        padding-right: ${theme.spacing.lg};
+        > * {
+          width: 100%;
+        }
       }
     }
     section {
@@ -43,9 +63,9 @@ export const StyledCarList = styled.ul(
 
     ${mediaQuery.sm} {
       flex-direction: row;
-      gap: ${theme.spacing.sm};
+      gap: ${theme.spacing.md};
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     > li {
@@ -55,12 +75,24 @@ export const StyledCarList = styled.ul(
         width: calc(50% - ${theme.spacing.sm});
       }
       ${mediaQuery.md} {
+        min-height: 500px;
         width: calc(33.333% - ${theme.spacing.sm});
       }
+
       margin-bottom: ${theme.spacing.md};
       &:last-child {
         margin-bottom: 0;
       }
     }
+  `
+)
+
+export const StyledLoadMoreArea = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: ${theme.spacing.xxl} 0;
   `
 )

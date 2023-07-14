@@ -1,8 +1,11 @@
-import { Offer } from '../../types'
+import type { Offer } from '../../types'
+import type { FilterableValues } from '../Context.types'
 
 export enum ActionType {
   SetCars = 'SetCars',
   ResetCars = 'ResetCars',
+  SetFilterCars = 'SetFilterCars',
+  SetAppliedFilter = 'SetAppliedFilter',
 }
 
 export type SetCarsAction = {
@@ -16,4 +19,28 @@ export type ResetCarsAction = {
   type: ActionType.ResetCars
 }
 
-export type ReducerAction = SetCarsAction | ResetCarsAction
+export type SetFilterCarsAction = {
+  type: ActionType.SetFilterCars
+  payload: {
+    filter: {
+      key: FilterableValues
+      value: string | null
+    }[]
+  }
+}
+
+export type SetAppliedFilterAction = {
+  type: ActionType.SetAppliedFilter
+  payload: {
+    filter: {
+      key: FilterableValues
+      value: string | null
+    }
+  }
+}
+
+export type ReducerAction =
+  | SetCarsAction
+  | ResetCarsAction
+  | SetFilterCarsAction
+  | SetAppliedFilterAction

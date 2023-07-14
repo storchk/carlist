@@ -1,5 +1,6 @@
-import { mediaQuery } from '../../../styles'
 import styled, { css } from 'styled-components'
+
+import { mediaQuery } from '../../../styles'
 
 export const StyledNavigation = styled.nav(
   ({ theme }) => css`

@@ -1,7 +1,7 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const Offer = gql`
-fragment Offer on SearchResultV3Records {
+  fragment Offer on SearchResultV3Records {
     id
     brand
     model
@@ -36,5 +36,5 @@ fragment Offer on SearchResultV3Records {
     }
     category
     color
-}
+  }
 `

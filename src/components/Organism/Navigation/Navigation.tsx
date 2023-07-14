@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom'
+
 import { Heading } from '../../Atoms/Typography'
 import { StyledNavigation } from './Navigation.styled'
-import { useNavigate } from 'react-router-dom'
 export const Navigation = (): JSX.Element => {
   const navigate = useNavigate()
 

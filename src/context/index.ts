@@ -1,2 +1,3 @@
-export { useAppContext, AppContextProvider } from './ContextProvider'
 export * from './Context.types'
+export { AppContextProvider } from './ContextProvider'
+export { useAppContext } from './useAppContext'

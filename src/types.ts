@@ -1,5 +1,11 @@
 export type FuelType = 'PETROL' | 'DIESEL' | 'ELECTRICITY' | 'HYBRID'
-export type Gear = 'MANUAL' | 'AUTOMATIC'
+
+export enum Gear {
+  MANUAL_GEAR = 'Schaltgetriebe',
+  AUTOMATIC_GEAR = 'Automatikgetriebe',
+  HALFAUTOMATIC_GEAR = 'Halbautomatikgetrieber',
+}
+
 export type Media = {
   url: string
 }
@@ -20,7 +26,7 @@ export type Offer = {
       type: FuelType
     }
     consumption: Consumption
-    transmission_type: string
+    transmission_type: typeof Gear
     cc: number
   }
   im_price: {

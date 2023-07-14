@@ -1,7 +1,7 @@
-export type FontWeights =  'regular' | 'bold'
+export type FontWeights = 'regular' | 'bold'
 
 export type FontWeightType = {
-  [weight in FontWeights]: number 
+  [weight in FontWeights]: number
 }
 
 export type FontSize =

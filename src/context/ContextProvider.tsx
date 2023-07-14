@@ -1,17 +1,18 @@
-import { FC, useCallback, useReducer } from 'react'
-import { useContext } from 'react'
+import type { FC } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 
-import type { AppContextProviderProps, AppContextType, SetCarsType } from './Context.types'
 import { AppContext } from './Context'
 import { initialState } from './Context.constants'
-import { reducer, ActionType } from './reducer'
+import type { AppContextProviderProps, SetCarsType, SetFilterCarsType } from './Context.types'
+import { ActionType, reducer } from './reducer'
 
 export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
   })
 
-  const { cars } = state
+  const { cars, filteredCars, appliedFilter } = state
+
   const setCars = useCallback((args: SetCarsType) => {
     dispatch({ type: ActionType.SetCars, payload: { cars: args } })
   }, [])
@@ -20,17 +21,32 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
     dispatch({ type: ActionType.ResetCars })
   }, [])
 
+  const setFilterCars = useCallback((args: SetFilterCarsType[]) => {
+    dispatch({ type: ActionType.SetFilterCars, payload: { filter: args } })
+  }, [])
+
+  const setAppliedFilter = useCallback((args: SetFilterCarsType) => {
+    dispatch({ type: ActionType.SetAppliedFilter, payload: { filter: args } })
+  }, [])
+
+  useEffect(() => {
+    if (appliedFilter.length) {
+      setFilterCars(appliedFilter)
+    }
+  }, [appliedFilter, setFilterCars])
+
   return (
     <AppContext.Provider
       value={{
+        appliedFilter,
         cars,
+        filteredCars,
         setCars,
         resetCars,
+        setAppliedFilter,
       }}
     >
       {children}
     </AppContext.Provider>
   )
 }
-
-export const useAppContext = (): AppContextType => useContext(AppContext)

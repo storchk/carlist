@@ -18,7 +18,11 @@ module.exports = {
     'plugin:jest/all',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.json',
+  },
   plugins: [
     'react-refresh',
     '@typescript-eslint',
@@ -93,5 +97,11 @@ module.exports = {
     ],
     'simple-import-sort/exports': 'error',
     'prettier/prettier': 'error',
+    'react/display-name': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jest/require-hook': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/label-has-for': 'off',
   },
 }
