@@ -26,11 +26,12 @@ export const ListPage = (): JSX.Element => {
   })
 
   const handleScroll = useCallback(async () => {
-    const scrollHeight = document.documentElement.scrollHeight - 100
+    const scrollHeight = document.documentElement.scrollHeight
     const scrollTop = document.documentElement.scrollTop
     const clientHeight = document.documentElement.clientHeight
     if (scrollTop + clientHeight >= scrollHeight && !loading) {
       pageRef.current += 1
+
       await fetchMore({
         variables: {
           q: {
