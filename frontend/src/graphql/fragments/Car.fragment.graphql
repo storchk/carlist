@@ -1,0 +1,29 @@
+fragment Car on Car {
+  brand
+  category
+  color
+  drivetrain {
+    cc
+    consumption
+    fuel
+    transmissionType
+  }
+  id
+  media {
+    url
+  }
+  model
+  performance
+  price {
+    gross
+  }
+  technicalFeatures {
+    drive
+  }
+  vehicleHistory {
+    registrationDate
+  }
+  vehicleType {
+    condition
+  }
+}

@@ -1,0 +1,8 @@
+query GetCars($limit: Int, $offset: Int) {
+  cars(limit: $limit, offset: $offset) {
+    total
+    items {
+      ...Car
+    }
+  }
+}

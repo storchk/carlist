@@ -5,6 +5,6 @@ export type CarCardProps = {
   fuel?: string
   consumption?: string
   firstRegistration?: string
-  performance?: number
+  performance?: string
   gearbox?: string
 }

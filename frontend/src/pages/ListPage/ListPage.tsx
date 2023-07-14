@@ -1,32 +1,26 @@
-import { useQuery } from '@apollo/client'
 import { filter } from 'lodash'
 import { useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '../../components/Atoms/Button'
-import { Heading } from '../../components/Atoms/Typography'
+import { Heading, Typography } from '../../components/Atoms/Typography'
 import { CarCard } from '../../components/Molecules/CarCard'
 import { useAppContext } from '../../context'
-import { getOffers } from '../../graphql/queries/GetOffersV3'
-import type { GetOffersV3Response } from '../../types'
-import { Gear } from '../../types'
+
 import { Filter } from './components/Filter'
 import { StyledCarList, StyledListPage, StyledLoadMoreArea } from './ListPage.styled'
-import { mapConsumptionToString, mapFuelTypeToName } from './ListPage.utils'
+import { useGetCarsQuery } from '@/graphql'
 
 export const ListPage = (): JSX.Element => {
   const { cars, filteredCars, setCars } = useAppContext()
-  const pageRef = useRef(1)
-  const { loading, error, fetchMore } = useQuery<GetOffersV3Response>(getOffers, {
-    fetchPolicy: 'cache-first',
+  const pageRef = useRef(0)
+  const { data, loading, error, fetchMore } = useGetCarsQuery({
     variables: {
-      q: {
-        'page-size': 10,
-        page: 1,
-      },
+      limit: 10,
+      offset: 0,
     },
     onCompleted: data => {
-      setCars(data.getOffersV3.records)
+      setCars(data.cars.items)
     },
   })
 
@@ -34,21 +28,16 @@ export const ListPage = (): JSX.Element => {
     pageRef.current += 1
     await fetchMore({
       variables: {
-        q: {
-          'page-size': 10,
-          page: pageRef.current,
-        },
+        limit: 10,
+        offset: pageRef.current * 10,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev
-        /*
-         * SearchResultV3Records contains categories which is required per schema but includes null values
-         */
-        setCars(fetchMoreResult.getOffersV3.records)
+        setCars(fetchMoreResult.cars.items)
         return {
-          getOffersV3: {
-            ...prev.getOffersV3,
-            records: [...prev.getOffersV3.records, ...fetchMoreResult.getOffersV3.records],
+          cars: {
+            ...prev.cars,
+            items: [...prev.cars.items, ...fetchMoreResult.cars.items],
           },
         }
       },
@@ -60,8 +49,6 @@ export const ListPage = (): JSX.Element => {
     const scrollTop = document.documentElement.scrollTop
     const clientHeight = document.documentElement.clientHeight
     if (scrollTop + clientHeight >= scrollHeight && !loading) {
-      pageRef.current += 1
-
       await loadMoreCars()
     }
   }, [loading, loadMoreCars])
@@ -81,22 +68,23 @@ export const ListPage = (): JSX.Element => {
       </aside>
       <section>
         <Heading tag="h2">Autos</Heading>
+        <Typography tag="span">
+          {filteredCars.length} von {data?.cars.total}
+        </Typography>
         <StyledCarList>
-          {filteredCars?.map(offer => {
+          {filteredCars?.map(car => {
             return (
-              <li key={offer.id}>
-                <Link to={`/cars/${offer.id}`}>
+              <li key={car.id}>
+                <Link to={`/cars/${car.id}`}>
                   <CarCard
-                    brand={offer.brand}
-                    model={offer.model}
-                    image={offer.media.final[0].url}
-                    fuel={mapFuelTypeToName(offer.drivetrain.fuel.type)}
-                    consumption={mapConsumptionToString(offer.drivetrain.consumption)}
-                    firstRegistration={offer.vehicle_history.reg_date}
-                    performance={offer.performance}
-                    gearbox={
-                      Gear[offer.drivetrain.transmission_type as unknown as keyof typeof Gear]
-                    }
+                    brand={car.brand}
+                    model={car.model}
+                    image={car.media[0].url}
+                    fuel={car.drivetrain.fuel || undefined}
+                    consumption={car.drivetrain.consumption}
+                    firstRegistration={car.vehicleHistory.registrationDate || undefined}
+                    performance={car.performance || undefined}
+                    gearbox={car.drivetrain.transmissionType || undefined}
                   />
                 </Link>
               </li>
@@ -104,7 +92,7 @@ export const ListPage = (): JSX.Element => {
           })}
         </StyledCarList>
         {loading && <div>Loading...</div>}
-        {!loading && cars.length !== filter.length && (
+        {!loading && cars.length !== data?.cars.total && (
           <StyledLoadMoreArea>
             <Button label="Load more" onClick={loadMoreCars} />
           </StyledLoadMoreArea>

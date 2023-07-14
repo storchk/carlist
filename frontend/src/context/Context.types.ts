@@ -1,7 +1,7 @@
-import type { Offer } from '../types'
+import { Car } from '@/graphql'
 
 export type FilterableValues = 'brand' | 'model' | 'color' | 'drivetrain.fuel.type'
-export type SetCarsType = Offer[]
+export type SetCarsType = Car[]
 export type SetFilterCarsType = {
   key: FilterableValues
   value: string | null
@@ -11,8 +11,8 @@ export type AppliedFilterType = {
   value: string | null
 }
 export type AppStateType = {
-  cars: Offer[]
-  filteredCars: Offer[]
+  cars: Car[]
+  filteredCars: Car[]
   appliedFilter: AppliedFilterType[]
 }
 

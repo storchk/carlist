@@ -1,32 +1,18 @@
-import type { Consumption, FuelType, GetOffersV3 } from '../../types'
+import { Car } from '@/graphql'
 
-export function mapFuelTypeToName(fuelType: FuelType): string | undefined {
-  switch (fuelType) {
-    case 'DIESEL':
-      return 'Diesel'
-    case 'ELECTRICITY':
-      return 'Elektro'
-    case 'PETROL':
-      return 'Benzin'
-    default:
-      return undefined
-  }
-}
-
-export function mapConsumptionToString(consumption: Consumption): string | undefined {
-  return consumption.consumption_combined
-    ? `${consumption.consumption_combined} ${consumption.unit.replace('LITER', 'l')}`
-    : undefined
-}
-
-export function getAllModels(cars: GetOffersV3['records']) {
+export function getAllModels(cars: Car[]) {
   const items = cars.map(car => car.model)
   return ['Beliebig', ...items.filter((item, index) => items.indexOf(item) === index)]
 }
 
-export function getAllColors(cars: GetOffersV3['records']) {
+export function getAllColors(cars: Car[]) {
   const items = cars.map(car => car.color)
-  return ['Beliebig', ...items.filter((item, index) => items.indexOf(item) === index)]
+  return [
+    'Beliebig',
+    ...items.filter(
+      (item, index): item is string => Boolean(item) && items.indexOf(item) === index
+    ),
+  ]
 }
 
 export function getAllBrands() {

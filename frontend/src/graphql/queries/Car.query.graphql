@@ -1,0 +1,5 @@
+query GetCar($id: String!) {
+  car(id: $id) {
+    ...Car
+  }
+}

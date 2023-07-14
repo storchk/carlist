@@ -30,7 +30,7 @@ export const CarCard = ({
         </Heading>
         <StyledCarCardContentBadges>
           {fuel ? <Badge label={fuel} /> : null}
-          {performance ? <Badge label={`${performance} PS`} /> : null}
+          {performance ? <Badge label={`${performance}`} /> : null}
           {gearbox ? <Badge label={gearbox} /> : null}
         </StyledCarCardContentBadges>
 

@@ -20,7 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/graphql": ["./src/graphql/index.ts"]
+    }
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }
