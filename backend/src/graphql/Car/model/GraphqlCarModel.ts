@@ -9,7 +9,6 @@ import { GraphqlTechnicalFeaturesModel } from '../../common/TechnicalFeatures/Gr
 
 @ObjectType('Car', {
   simpleResolvers: true,
-  description: 'Gets information about a single car',
 })
 export class GraphqlCarModel {
   @Field(() => ID)
