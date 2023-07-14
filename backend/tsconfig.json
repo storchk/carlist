@@ -9,7 +9,6 @@
     "target": "es2017",
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "types": ["reflect-metadata"],
     "allowSyntheticDefaultImports": true
   },
   "compileOnSave": true,

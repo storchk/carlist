@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "scripts": {
-    "serve": "nodemon --exec ts-node src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
-    "build:watch": "tsc --watch"
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": "16"

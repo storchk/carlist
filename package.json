@@ -1,18 +1,18 @@
 {
+  "name": "carlist",
+  "author": {
+    "name": "Kevin Storch"
+  },
+  "version": "1.0.0",
   "scripts": {
-    "start:backend": "pnpm run --prefix backend serve ",
+    "start:backend": "pnpm run --prefix backend dev",
     "start:frontend": "pnpm run --prefix frontend dev",
-    "lint": "eslint --ext .ts,.tsx ."
+    "install:frontend": "pnpm i --prefix frontend",
+    "install:backend": "pnpm i --prefix backend"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
-    "eslint": "^8.9.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.8"
   }
