@@ -1,21 +1,8 @@
-## backend-for-frontend
-# Compiled JavaScript files
-backend-for-frontend/lib/**/*.js
-backend-for-frontend/lib/**/*.js.map
-
-# TypeScript v1 declaration files
-backend-for-frontend/typings/
+.DS_Store
 
 # Node.js dependency directory
-backend-for-frontend/node_modules/
+backend/node_modules/
 frontend/node_modules/
 
 ## General
 /node_modules/
-backend-for-frontend/ui-debug.log
-backend-for-frontend/firebase-debug.log
-firebase-debug.log
-
-backend-for-frontend/.runtimeconfig.json
-backend-for-frontend/env.json
-backend/node_modules
