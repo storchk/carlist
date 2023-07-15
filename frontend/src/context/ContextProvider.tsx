@@ -30,10 +30,10 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
   }, [])
 
   useEffect(() => {
-    if (appliedFilter.length) {
+    if (appliedFilter.length && cars.length && filteredCars.length) {
       setFilterCars(appliedFilter)
     }
-  }, [appliedFilter, setFilterCars])
+  }, [appliedFilter, setFilterCars, cars.length, filteredCars.length])
 
   return (
     <AppContext.Provider

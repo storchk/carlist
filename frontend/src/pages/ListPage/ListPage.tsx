@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { Link, useLocation, useParams } from 'react-router-dom'
 
 import { useGetCarsQuery } from '@/graphql'
 
@@ -15,8 +15,9 @@ import {
 } from './ListPage.styled'
 import { ErrorPage } from '../ErrorPage'
 import { Loading } from './components/Loading'
-
+import { useParameterFilter } from './hooks/useParameterFilter'
 export const ListPage = (): JSX.Element => {
+  useParameterFilter()
   const { cars, filteredCars, setCars } = useAppContext()
   const pageRef = useRef(0)
   const { data, error, loading, fetchMore } = useGetCarsQuery({
@@ -56,7 +57,7 @@ export const ListPage = (): JSX.Element => {
     if (scrollTop + clientHeight >= scrollHeight && !loading) {
       await loadMoreCars()
     }
-  }, [loading, loadMoreCars])
+  }, [loading])
 
   useEffect(() => {
     const loadMore = async () => handleScroll()
@@ -77,7 +78,7 @@ export const ListPage = (): JSX.Element => {
         {!loading ? (
           <>
             <StyledListPagePageHeader>
-              <Heading tag="h2">Autos</Heading>
+              <Heading tag="h2">Fahrzeuge</Heading>
               <Typography tag="span">
                 {filteredCars.length} von {data?.cars.total}
               </Typography>
@@ -106,7 +107,7 @@ export const ListPage = (): JSX.Element => {
         ) : null}
         {!loading && cars.length !== data?.cars.total && (
           <StyledLoadMoreArea>
-            <Button label="Load more" onClick={loadMoreCars} />
+            <Button label="Mehr Fahrzeuge laden" onClick={loadMoreCars} />
           </StyledLoadMoreArea>
         )}
       </section>

@@ -1,13 +1,12 @@
 import type { Car } from '@/graphql'
 
-export type FilterableValues = 'brand' | 'model' | 'color' | 'drivetrain.fuel.type'
 export type SetCarsType = Car[]
 export type SetFilterCarsType = {
-  key: FilterableValues
+  key: string
   value: string | null
 }
 export type AppliedFilterType = {
-  key: FilterableValues
+  key: string
   value: string | null
 }
 export type AppStateType = {

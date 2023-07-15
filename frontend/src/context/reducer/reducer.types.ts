@@ -1,7 +1,5 @@
 import type { Car } from '@/graphql'
 
-import type { FilterableValues } from '../Context.types'
-
 export enum ActionType {
   SetCars = 'SetCars',
   ResetCars = 'ResetCars',
@@ -24,7 +22,7 @@ export type SetFilterCarsAction = {
   type: ActionType.SetFilterCars
   payload: {
     filter: {
-      key: FilterableValues
+      key: string
       value: string | null
     }[]
   }
@@ -34,7 +32,7 @@ export type SetAppliedFilterAction = {
   type: ActionType.SetAppliedFilter
   payload: {
     filter: {
-      key: FilterableValues
+      key: string
       value: string | null
     }
   }

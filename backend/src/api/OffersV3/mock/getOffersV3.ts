@@ -1281,107 +1281,78 @@ export const offers: GetOffersV3Response = {
         color: 'WHITE',
       },
       {
-        id: '76e37964-4e79-5650-93d4-4cc2938710e9',
-        brand: 'Volkswagen',
-        model: 'Tiguan',
-        performance: 110,
-        vehicle_history: { reg_date: '09.2022' },
-        drivetrain: {
-          fuel: { type: 'DIESEL' },
-          consumption: { unit: 'LITER', consumption_combined: 4.7 },
-          transmission_type: 'AUTOMATIC_GEAR',
-          cc: 1968,
+        id: '57dbdd2d-8179-5918-930f-e44370bbc313',
+        brand: 'Mercedes-Benz',
+        model: 'B 180',
+        performance: 100,
+        vehicle_history: {
+          reg_date: '12.2020',
         },
-        im_price: { consumer_price_gross: 35447 },
+        drivetrain: {
+          fuel: {
+            type: 'PETROL',
+          },
+          consumption: {
+            unit: 'LITER',
+            consumption_combined: 5.4,
+          },
+          transmission_type: 'MANUAL_GEAR',
+          cc: 1332,
+        },
+        im_price: {
+          consumer_price_gross: 26430,
+        },
         media: {
           final: [
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_2.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_04.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_20.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_01.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_3.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_02.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_4.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_03.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_10.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_05.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_11.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_06.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_12.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_07.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_13.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_08.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_14.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_09.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_15.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_10.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_16.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_11.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_21.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_14.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_22.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_23.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_24.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_25.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_26.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_27.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_28.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_6.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_7.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_8.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_9.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_5.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_19.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_18.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/66d10f724e9e57af57c9d8c2a47571b1/image_0ES01365M_17.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/8a79ff647d10c465f576895f0264d7cd/image_13.jpg',
             },
           ],
         },
-        technical_features: { drive: null },
-        vehicle_type: { condition: 'USED' },
-        category: 'OFFROAD',
-        color: 'BLACK',
+        technical_features: {
+          drive: null,
+        },
+        vehicle_type: {
+          condition: 'USED',
+        },
+        category: 'VAN',
+        color: 'WHITE',
       },
       {
         id: 'cb8419d8-a1ac-53d3-9d90-49e65a23ab04',
