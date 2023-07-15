@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "jest --no-cache",
+    "coverage": "jest --no-cache --collectCoverage",
     "codegen": "pnpm graphql-code-generator --config ./codegen.ts"
   },
   "dependencies": {

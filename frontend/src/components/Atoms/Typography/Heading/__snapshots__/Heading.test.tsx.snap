@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms: Typography/Heading snapshot: h1 1`] = `
+.c0 {
+  font-weight: 400;
+  color: inherit;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  .c0 {
+    font-size: 32px;
+  }
+}
+
+<h1
+  className="c0"
+  fontSize={
+    {
+      "desktop": "xxxl",
+      "mobile": "xl",
+      "tablet": "xxl",
+    }
+  }
+>
+  Lorem Ipsum
+</h1>
+`;
+
+exports[`atoms: Typography/Heading snapshot: h2 1`] = `
+.c0 {
+  font-weight: 700;
+  color: inherit;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    font-size: 24px;
+  }
+}
+
+<h2
+  className="c0"
+  fontSize={
+    {
+      "mobile": "lg",
+      "tablet": "xl",
+    }
+  }
+  fontWeight="bold"
+>
+  Lorem Ipsum
+</h2>
+`;
+
+exports[`atoms: Typography/Heading snapshot: h3 1`] = `
+.c0 {
+  font-weight: 700;
+  color: inherit;
+  font-size: 20px;
+}
+
+<h3
+  className="c0"
+  fontSize={
+    {
+      "mobile": "lg",
+    }
+  }
+  fontWeight="bold"
+>
+  Lorem Ipsum
+</h3>
+`;
+
+exports[`atoms: Typography/Heading snapshot: h4 1`] = `
+.c0 {
+  font-weight: 700;
+  color: inherit;
+  font-size: 20px;
+}
+
+<h4
+  className="c0"
+  fontSize={
+    {
+      "mobile": "lg",
+    }
+  }
+  fontWeight="bold"
+>
+  Lorem Ipsum
+</h4>
+`;
+
+exports[`atoms: Typography/Heading snapshot: h5 1`] = `
+.c0 {
+  font-weight: 400;
+  color: inherit;
+  font-size: 18px;
+}
+
+<h5
+  className="c0"
+  fontSize={
+    {
+      "mobile": "md",
+    }
+  }
+>
+  Lorem Ipsum
+</h5>
+`;
+
+exports[`atoms: Typography/Heading snapshot: h6 1`] = `
+.c0 {
+  font-weight: 400;
+  color: inherit;
+  font-size: 12px;
+}
+
+<h6
+  className="c0"
+  fontSize={
+    {
+      "mobile": "xxs",
+    }
+  }
+>
+  Lorem Ipsum
+</h6>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms: Typography snapshot 1`] = `
+.c0 {
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+}
+
+<span
+  className="c0"
+>
+  Lorem Ipsum
+</span>
+`;
