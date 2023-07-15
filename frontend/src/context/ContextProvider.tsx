@@ -17,10 +17,6 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
     dispatch({ type: ActionType.SetCars, payload: { cars: args } })
   }, [])
 
-  const resetCars = useCallback(() => {
-    dispatch({ type: ActionType.ResetCars })
-  }, [])
-
   const setFilterCars = useCallback((args: SetFilterCarsType[]) => {
     dispatch({ type: ActionType.SetFilterCars, payload: { filter: args } })
   }, [])
@@ -42,7 +38,6 @@ export const AppContextProvider: FC<AppContextProviderProps> = ({ children }) =>
         cars,
         filteredCars,
         setCars,
-        resetCars,
         setAppliedFilter,
       }}
     >

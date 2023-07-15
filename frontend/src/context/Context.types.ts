@@ -18,7 +18,6 @@ export type AppStateType = {
 export type AppContextType = {
   setCars: (cars: SetCarsType) => void
   setAppliedFilter: (filter: AppliedFilterType) => void
-  resetCars: () => void
 } & AppStateType
 
 export type AppContextProviderProps = {
