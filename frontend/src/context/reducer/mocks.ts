@@ -1,4 +1,4 @@
-import { Car } from '@/graphql'
+import type { Car } from '@/graphql'
 export const mockedCar1: Car = {
   brand: 'Volkswagen',
   category: 'LIMOUSINE',

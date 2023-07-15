@@ -1,7 +1,6 @@
 import { axe } from 'jest-axe'
 
 import { testing } from '../../../testing'
-
 import { Card } from './Card'
 import type { CardProps } from './Card.types'
 

@@ -1,13 +1,10 @@
-import { reducer } from './reducer'
-import {
-  ActionType,
-  SetAppliedFilterAction,
-  SetCarsAction,
-  SetFilterCarsAction,
-} from './reducer.types'
+import type { Car } from '@/graphql'
+
 import { initialState } from '../Context.constants'
 import { mockedCar1, mockedCar2 } from './mocks'
-import { Car } from '@/graphql'
+import { reducer } from './reducer'
+import type { SetAppliedFilterAction, SetCarsAction, SetFilterCarsAction } from './reducer.types'
+import { ActionType } from './reducer.types'
 
 describe('reducer', () => {
   it('should handle setCars', () => {
@@ -18,7 +15,7 @@ describe('reducer', () => {
       cars,
       filteredCars: cars,
     }
-    expect(reducer(initialState, action)).toEqual(expectedState)
+    expect(reducer(initialState, action)).toStrictEqual(expectedState)
   })
 
   it('should handle setFilterCars', () => {
@@ -35,7 +32,7 @@ describe('reducer', () => {
       cars,
       filteredCars: [mockedCar2],
     }
-    expect(reducer({ ...initialState, cars }, action)).toEqual(expectedState)
+    expect(reducer({ ...initialState, cars }, action)).toStrictEqual(expectedState)
   })
 
   it('should handle setAppliedFilter when filter value is null', () => {
@@ -49,7 +46,7 @@ describe('reducer', () => {
       ...initialState,
       appliedFilter: [],
     }
-    expect(reducer({ ...initialState, appliedFilter }, action)).toEqual(expectedState)
+    expect(reducer({ ...initialState, appliedFilter }, action)).toStrictEqual(expectedState)
   })
 
   it('should handle SET_APPLIED_FILTER when filter already exists', () => {
@@ -62,7 +59,7 @@ describe('reducer', () => {
       ...initialState,
       appliedFilter: [{ key: 'brand', value: 'Volkswagen' }],
     }
-    expect(reducer({ ...initialState, appliedFilter }, action)).toEqual(expectedState)
+    expect(reducer({ ...initialState, appliedFilter }, action)).toStrictEqual(expectedState)
   })
 
   it('should handle SET_APPLIED_FILTER when filter does not exist', () => {
@@ -78,6 +75,6 @@ describe('reducer', () => {
         { key: 'model', value: 'Crossland' },
       ],
     }
-    expect(reducer({ ...initialState, appliedFilter }, action)).toEqual(expectedState)
+    expect(reducer({ ...initialState, appliedFilter }, action)).toStrictEqual(expectedState)
   })
 })
