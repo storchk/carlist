@@ -24,7 +24,7 @@ export const StyledListPage = styled.main(
       flex-wrap: wrap;
       width: 100%;
       gap: ${theme.spacing.md};
-      max-height: 96vh;
+      max-height: 96%;
       margin-bottom: ${theme.spacing.xxl};
       > * {
         width: calc(50% - ${theme.spacing.sm});
