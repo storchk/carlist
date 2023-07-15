@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organism:Gallery snapshot 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c1 {
+  width: 100%;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+.c2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 8px;
+}
+
+.c2::after {
+  content: '';
+  flex: auto;
+}
+
+.c3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+  width: calc(20% - 8px);
+  height: calc(20% - 8px);
+  border: 4px solid #f7b628;
+}
+
+.c3:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.c4 {
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+<div
+  className="c0"
+>
+  <img
+    alt=""
+    className="c1"
+    data-test="gallery-active-image"
+    src="https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0dc7206c81b56879b7c42a3ecca3ad4e/image_0PU067451_20.jpg"
+  />
+  <ul
+    className="c2"
+  >
+    <li
+      className="c3"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        className="c4"
+        loading="lazy"
+        src="https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0dc7206c81b56879b7c42a3ecca3ad4e/image_0PU067451_20.jpg"
+      />
+    </li>
+  </ul>
+</div>
+`;

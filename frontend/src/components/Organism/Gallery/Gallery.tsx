@@ -13,7 +13,7 @@ export const Gallery = ({ images }: GalleryProps): JSX.Element => {
   const [activeImage, setActiveImage] = useState(images[0])
   return (
     <StyledGallery>
-      <StyledHeroImage src={activeImage} alt="" />
+      <StyledHeroImage src={activeImage} alt="" data-test="gallery-active-image" />
       <StyledPreviewImageList>
         {images.map((image, index) => {
           return (
