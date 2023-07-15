@@ -32,6 +32,40 @@ The frontend app in the `/frontend` directory is a web application. It is respon
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Codegen](https://the-guild.dev/graphql/codegen)
 
+### Filter
+
+Cars in the car list can be filtered using query parameters. For example, to filter by brand, you can add the brand parameter to the URL and set its value to the desired brand. For instance, to show only cars of the brand Audi, you can use the following URL:
+
+```
+?brand=audi
+```
+
+This will filter the car list to show only cars of the brand Audi.
+It's also possible to combine filter in the url
+
+```
+?brand=audi&color=red
+```
+
+This will filter the car list to show only cars of the brand Audi which are red.  
+You can filter the car list by the following properties:
+
+- brand
+- category
+- color
+- drivetrain.cc
+- drivetrain.consumption
+- drivetrain.fuel
+- drivetrain.transmissionType
+- id
+- model
+- performance
+- price.gross
+- technicalFeatures.drive
+- vehicleHistory.registrationDate
+- vehicleType.condition
+  Use these properties to filter the car list according to your preferences.
+
 ### Codegen
 
 The frontend application leverages Codegen to automatically generate typed queries, interfaces, and hooks based on the GraphQL schema. This approach ensures type safety and enables seamless integration between the frontend and backend, enhancing the development process and reducing the potential for errors.
