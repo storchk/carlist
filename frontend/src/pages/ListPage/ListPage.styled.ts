@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { mediaQuery } from '../../styles'
+import { mediaQuery } from '@/styles'
 
 export const StyledListPage = styled.main(
   ({ theme }) => css`

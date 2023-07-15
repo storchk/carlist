@@ -2,9 +2,8 @@ import { useParams } from 'react-router-dom'
 
 import { useGetCarQuery } from '@/graphql'
 
-import { Badge } from '../../components/Atoms/Badge'
-import { Heading } from '../../components/Atoms/Typography'
-import { Gallery } from '../../components/Organism/Gallery'
+import { Badge, Heading, Gallery } from '@/components'
+
 import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
 import { NotFoundPage } from '../NotFoundPage'
 import { ErrorPage } from '../ErrorPage'

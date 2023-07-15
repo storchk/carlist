@@ -4,7 +4,7 @@ import type { FC, ReactElement } from 'react'
 import { create } from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 
-import { theme as defaultTheme } from '../theme'
+import { theme as defaultTheme } from '@/theme'
 
 function renderer(tree: ReactElement, theme = defaultTheme) {
   return create(<ThemeProvider theme={theme}>{tree}</ThemeProvider>).toJSON()

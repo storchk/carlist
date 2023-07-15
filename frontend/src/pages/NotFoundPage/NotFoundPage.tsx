@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Heading } from '../../components/Atoms/Typography'
-import { Button } from '../../components/Atoms/Button'
+
+import { Button, Heading } from '@/components'
 
 import { StyledNotFoundPage } from './NotFoundPage.styled'
 

@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { useGetCarsQuery } from '@/graphql'
 
-import { Button } from '../../components/Atoms/Button'
-import { Heading, Typography } from '../../components/Atoms/Typography'
-import { CarCard } from '../../components/Molecules/CarCard'
-import { useAppContext } from '../../context'
+import { Button, CarCard, Heading, Typography } from '@/components'
+
+import { useAppContext } from '@/context'
 import { Filter } from './components/Filter'
 import { StyledCarList, StyledListPage, StyledLoadMoreArea } from './ListPage.styled'
 import { ErrorPage } from '../ErrorPage'

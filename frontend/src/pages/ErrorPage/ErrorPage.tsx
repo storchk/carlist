@@ -1,4 +1,4 @@
-import { Heading, Typography } from '../../components/Atoms/Typography'
+import { Heading, Typography } from '@/components'
 
 import { StyledErrorPage } from './ErrorPage.styled'
 import { ErrorPageProps } from './ErrorPage.types'

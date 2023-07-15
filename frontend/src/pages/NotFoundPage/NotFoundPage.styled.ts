@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { mediaQuery } from '../../styles'
+import { mediaQuery } from '@/styles'
 
 export const StyledNotFoundPage = styled.main(
   ({ theme }) => css`

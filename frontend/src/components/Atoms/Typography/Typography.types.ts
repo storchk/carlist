@@ -1,7 +1,7 @@
 import type { LabelHTMLAttributes } from 'react'
 
-import type { FontSize, FontWeights } from '../../../styles/fonts'
-import type { ColorNames } from '../../../theme/colors'
+import type { FontSize, FontWeights } from '@/styles'
+import type { ColorNames } from '@/theme'
 
 export type TypographyProps = {
   color?: ColorNames | 'inherit'

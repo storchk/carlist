@@ -1,4 +1,4 @@
-import type { ThemeType } from './theme'
+import type { ThemeType } from '@/theme'
 
 declare module '*.woff'
 declare module '*.woff2'
