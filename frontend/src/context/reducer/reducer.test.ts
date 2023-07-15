@@ -24,10 +24,15 @@ describe('reducer', () => {
   it('should handle setFilterCars', () => {
     const cars: Car[] = [mockedCar1, mockedCar2]
 
-    const filter = [{ key: 'brand', value: 'Opel' }]
-    const action: SetFilterCarsAction = { type: ActionType.SetFilterCars, payload: { filter } }
+    const action: SetFilterCarsAction = {
+      type: ActionType.SetFilterCars,
+      payload: {
+        filter: [{ key: 'brand', value: 'Opel' }],
+      },
+    }
     const expectedState = {
       ...initialState,
+      cars,
       filteredCars: [mockedCar2],
     }
     expect(reducer({ ...initialState, cars }, action)).toEqual(expectedState)
@@ -35,10 +40,10 @@ describe('reducer', () => {
 
   it('should handle setAppliedFilter when filter value is null', () => {
     const appliedFilter = [{ key: 'brand', value: 'Opel' }]
-    const filter = { key: 'brand', value: null }
+
     const action: SetAppliedFilterAction = {
       type: ActionType.SetAppliedFilter,
-      payload: { filter },
+      payload: { filter: { key: 'brand', value: null } },
     }
     const expectedState = {
       ...initialState,
@@ -49,10 +54,9 @@ describe('reducer', () => {
 
   it('should handle SET_APPLIED_FILTER when filter already exists', () => {
     const appliedFilter = [{ key: 'brand', value: 'Opel' }]
-    const filter = { key: 'brand', value: 'Volkswagen' }
     const action: SetAppliedFilterAction = {
       type: ActionType.SetAppliedFilter,
-      payload: { filter },
+      payload: { filter: { key: 'brand', value: 'Volkswagen' } },
     }
     const expectedState = {
       ...initialState,
@@ -63,10 +67,9 @@ describe('reducer', () => {
 
   it('should handle SET_APPLIED_FILTER when filter does not exist', () => {
     const appliedFilter = [{ key: 'brand', value: 'Opel' }]
-    const filter = { key: 'model', value: 'Crossland' }
     const action: SetAppliedFilterAction = {
       type: ActionType.SetAppliedFilter,
-      payload: { filter },
+      payload: { filter: { key: 'model', value: 'Crossland' } },
     }
     const expectedState = {
       ...initialState,

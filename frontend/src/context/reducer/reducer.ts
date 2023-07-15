@@ -36,7 +36,7 @@ const setAppliedFilter = (oldState: AppStateType, action: SetAppliedFilterAction
     return {
       ...oldState,
       appliedFilter: [
-        ...oldState.appliedFilter.filter(filter => filter.key === action.payload.filter.key),
+        ...oldState.appliedFilter.filter(filter => filter.key !== action.payload.filter.key),
       ],
     }
   }

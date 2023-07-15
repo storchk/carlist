@@ -26,8 +26,7 @@
       "@/components": ["./src/components/index.ts"],
       "@/context": ["./src/context/index.ts"],
       "@/theme": ["./src/theme/index.ts"],
-      "@/styles": ["./src/styles/index.ts"],
-      "@/testing": ["./src/testing/index.ts"]
+      "@/styles": ["./src/styles/index.ts"]
     }
   },
   "references": [{ "path": "./tsconfig.node.json" }]

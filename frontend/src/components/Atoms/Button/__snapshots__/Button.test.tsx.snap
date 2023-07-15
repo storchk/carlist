@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms: Button snapshot 1`] = `
+.c1 {
+  font-weight: 700;
+  color: inherit;
+  font-size: 16px;
+}
+
+.c0 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 8px;
+  transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+  background-color: #f7b628;
+  color: #ffffff;
+}
+
+.c0:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.5rem 8px 0px;
+  transform: scale(1.02);
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  <span
+    className="c1"
+    fontSize={
+      {
+        "mobile": "sm",
+      }
+    }
+    fontWeight="bold"
+  >
+    Hello world! I am using React
+  </span>
+</button>
+`;

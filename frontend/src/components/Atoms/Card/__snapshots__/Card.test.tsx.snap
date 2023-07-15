@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms: Card snapshot 1`] = `
+.c1 {
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+}
+
+.c0 {
+  display: block;
+  transition: all 0.5s cubic-bezier(0.2, 0, 0.05, 1);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 16px 2px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0.5rem 8px 0px;
+  transform: scale(1.02);
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      Lorem Ipsum
+    </div>
+  </div>
+</div>
+`;

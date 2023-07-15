@@ -1,6 +1,6 @@
 import { axe } from 'jest-axe'
 
-import { testing } from '@/testing'
+import { testing } from '../../../testing'
 
 import { Select } from './Select'
 import type { SelectProps } from './Select.types'

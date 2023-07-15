@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms: Badge snapshot 1`] = `
+.c1 {
+  font-weight: 700;
+  color: inherit;
+  font-size: 12px;
+}
+
+.c0 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f1f3f9;
+  color: #2f3237;
+  border-radius: 16px;
+}
+
+<span
+  className="c0"
+>
+  <span
+    className="c1"
+    fontSize={
+      {
+        "mobile": "xxs",
+      }
+    }
+    fontWeight="bold"
+  >
+    Lorem Ipsum
+  </span>
+</span>
+`;
