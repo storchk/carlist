@@ -1,7 +1,5 @@
 import _ from 'lodash'
 
-import type { Car } from '@/graphql'
-
 import type { AppStateType } from '../Context.types'
 import type {
   ReducerAction,
@@ -11,19 +9,11 @@ import type {
 } from './reducer.types'
 import { ActionType } from './reducer.types'
 
-function getUniqueCars(cars: Car[]) {
-  return Array.from(new Set(cars.map(car => car.id)))
-    .map(id => {
-      return cars.find(car => car.id === id)
-    })
-    .filter((car): car is Car => !!car)
-}
-
 const setCars = (oldState: AppStateType, action: SetCarsAction): AppStateType => {
   return {
     ...oldState,
-    cars: getUniqueCars([...oldState.cars, ...action.payload.cars]),
-    filteredCars: getUniqueCars([...oldState.cars, ...action.payload.cars]),
+    cars: [...oldState.cars, ...action.payload.cars],
+    filteredCars: [...oldState.cars, ...action.payload.cars],
   }
 }
 

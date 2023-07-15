@@ -1198,77 +1198,87 @@ export const offers: GetOffersV3Response = {
         color: 'GREY',
       },
       {
-        id: '9efc727e-77e6-591b-bfe1-a4ae4569cd60',
-        brand: 'Audi',
-        model: 'e-tron',
-        performance: 440,
-        vehicle_history: { reg_date: '11.2021' },
-        drivetrain: {
-          fuel: { type: 'ELECTRICITY' },
-          consumption: { unit: 'KWH', consumption_combined: 19.3 },
-          transmission_type: 'AUTOMATIC_GEAR',
-          cc: null,
+        id: '7855606f-05b7-5661-99f2-88c91dab2467',
+        brand: 'Seat',
+        model: 'Leon',
+        performance: 96,
+        vehicle_history: {
+          reg_date: '06.2021',
         },
-        im_price: { consumer_price_gross: 122690 },
+        drivetrain: {
+          fuel: {
+            type: 'PETROL',
+          },
+          consumption: {
+            unit: 'LITER',
+            consumption_combined: 4.8,
+          },
+          transmission_type: 'MANUAL_GEAR',
+          cc: 1498,
+        },
+        im_price: {
+          consumer_price_gross: 28440,
+        },
         media: {
           final: [
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_18.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_4.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_02.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_2.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_03.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_3.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_13.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_15.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_15.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_6.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_16.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_7.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_06.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_5.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_07.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_10.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_08.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_11.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_09.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_12.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_10.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_13.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_11.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_14.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_12.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_17.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_14.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_8.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_17.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_9.jpg',
             },
             {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_05.jpg',
-            },
-            {
-              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/d61062bbe8ef9fada5338ec56412c365/image_04.jpg',
+              url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0ac40d915f3c4e59fbfd75364aeb1812/image_0MR005979-GW_16.jpg',
             },
           ],
         },
-        technical_features: { drive: null },
-        vehicle_type: { condition: 'USED' },
-        category: 'LIMOUSINE',
-        color: 'GREY',
+        technical_features: {
+          drive: null,
+        },
+        vehicle_type: {
+          condition: 'USED',
+        },
+        category: 'ESTATECAR',
+        color: 'WHITE',
       },
       {
         id: '76e37964-4e79-5650-93d4-4cc2938710e9',

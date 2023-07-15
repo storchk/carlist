@@ -9,6 +9,7 @@ import { CarCard } from '../../components/Molecules/CarCard'
 import { useAppContext } from '../../context'
 import { Filter } from './components/Filter'
 import { StyledCarList, StyledListPage, StyledLoadMoreArea } from './ListPage.styled'
+import { ErrorPage } from '../ErrorPage'
 
 export const ListPage = (): JSX.Element => {
   const { cars, filteredCars, setCars } = useAppContext()
@@ -58,7 +59,7 @@ export const ListPage = (): JSX.Element => {
     return () => window.removeEventListener('scroll', loadMore)
   }, [handleScroll])
 
-  if (error) return <div>Error</div>
+  if (error) return <ErrorPage error={error} />
 
   return (
     <StyledListPage>

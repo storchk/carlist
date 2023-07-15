@@ -6,14 +6,16 @@ import { Badge } from '../../components/Atoms/Badge'
 import { Heading } from '../../components/Atoms/Typography'
 import { Gallery } from '../../components/Organism/Gallery'
 import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
+import { NotFoundPage } from '../NotFoundPage'
+import { ErrorPage } from '../ErrorPage'
 
 export const DetailPage = (): JSX.Element => {
   const { id = '' } = useParams()
   const { data, loading, error } = useGetCarQuery({ variables: { id } })
 
   if (loading) return <div>Loading...</div>
-  if (!data?.car) return <div>no data</div>
-  if (error) return <p>{error.message}</p>
+  if (!data?.car) return <NotFoundPage />
+  if (error) return <ErrorPage error={error} />
 
   const { brand, model, drivetrain, performance, media } = data.car
 

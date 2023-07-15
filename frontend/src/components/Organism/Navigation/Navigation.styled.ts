@@ -16,7 +16,7 @@ export const StyledNavigation = styled.nav(
     right: 0;
     z-index: 100;
 
-    > div {
+    > * {
       margin: 0 ${theme.spacing.md};
 
       ${mediaQuery.lg} {
