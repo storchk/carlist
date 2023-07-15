@@ -21,7 +21,7 @@ export const DetailPage = (): JSX.Element => {
   return (
     <StyledDetailPage>
       <aside>
-        <Gallery images={media.map(media => media.url)} />
+        <Gallery images={media?.map(media => media.url) || []} />
       </aside>
       <section>
         <Heading tag="h2" fontWeight="bold">

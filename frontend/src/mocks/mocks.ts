@@ -1,9 +1,11 @@
 import type { Car } from '@/graphql'
 export const mockedCar1: Car = {
+  __typename: 'Car',
   brand: 'Volkswagen',
   category: 'LIMOUSINE',
   color: 'WHITE',
   drivetrain: {
+    __typename: 'Drivetrain',
     cc: '999 ccm',
     consumption: '5.2 LITER',
     fuel: 'Benzin',
@@ -12,21 +14,26 @@ export const mockedCar1: Car = {
   id: '32725100-3151-5348-871a-faee7be1f699',
   media: [
     {
+      __typename: 'Media',
       url: 'https://dqg4c1i67ln7w.cloudfront.net/photos/edited/0dc7206c81b56879b7c42a3ecca3ad4e/image_0PU067451_20.jpg',
     },
   ],
   model: 'Polo',
   performance: '70 PS',
   price: {
+    __typename: 'Price',
     gross: 22395,
   },
   technicalFeatures: {
+    __typename: 'TechnicalFeatures',
     drive: 'NO INFORMATION',
   },
   vehicleHistory: {
+    __typename: 'VehicleHistory',
     registrationDate: '06.2023',
   },
   vehicleType: {
+    __typename: 'VehicleType',
     condition: 'USED',
   },
 }
