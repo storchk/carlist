@@ -3,7 +3,11 @@ module.exports = {
   globals: {
     JSX: true,
   },
-
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
