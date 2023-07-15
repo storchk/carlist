@@ -1,13 +1,12 @@
 import { useParams } from 'react-router-dom'
 
+import { Badge, Gallery, Heading } from '@/components'
 import { useGetCarQuery } from '@/graphql'
 
-import { Badge, Heading, Gallery } from '@/components'
-
-import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
-import { NotFoundPage } from '../NotFoundPage'
 import { ErrorPage } from '../ErrorPage'
+import { NotFoundPage } from '../NotFoundPage'
 import { Loading } from './components/Loading'
+import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
 
 export const DetailPage = (): JSX.Element => {
   const { id = '' } = useParams()

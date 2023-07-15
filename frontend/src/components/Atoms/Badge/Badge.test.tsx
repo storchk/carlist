@@ -1,6 +1,7 @@
 import { axe } from 'jest-axe'
 
 import { testing } from '@/testing'
+
 import { Badge } from './Badge'
 import type { BadgeProps } from './Badge.types'
 

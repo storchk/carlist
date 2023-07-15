@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom'
+
 import { Button, CarCard, Heading, Typography } from '@/components'
 import { useAppContext } from '@/context'
+
+import { ErrorPage } from '../ErrorPage'
 import { Filter } from './components/Filter'
+import { Loading } from './components/Loading'
+import { useGetCars } from './hooks/useGetCarsQuery'
+import { useParameterFilter } from './hooks/useParameterFilter'
 import {
   StyledCarList,
   StyledListPage,
-  StyledLoadMoreArea,
   StyledListPagePageHeader,
+  StyledLoadMoreArea,
 } from './ListPage.styled'
-import { ErrorPage } from '../ErrorPage'
-import { Loading } from './components/Loading'
-import { useParameterFilter } from './hooks/useParameterFilter'
-import { useGetCars } from './hooks/useGetCarsQuery'
 export const ListPage = (): JSX.Element => {
   useParameterFilter()
   const { data, loading, error, fetchMore } = useGetCars()

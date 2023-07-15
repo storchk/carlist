@@ -1,4 +1,5 @@
 import { memo } from 'react'
+
 import { StyledSkeleton } from './Skeleton.styled'
 import type { SkeletonProps } from './Skeleton.types'
 

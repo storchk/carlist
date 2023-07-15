@@ -1,6 +1,7 @@
 import { axe } from 'jest-axe'
 
 import { testing } from '@/testing'
+
 import { Button } from './Button'
 import type { ButtonProps } from './Button.types'
 

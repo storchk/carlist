@@ -1,6 +1,7 @@
-import { useAppContext } from '@/context'
 import { useEffect, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
+
+import { useAppContext } from '@/context'
 
 // This hook is used to set the applied filter from the URL query parameters.
 export function useParameterFilter() {
@@ -18,5 +19,5 @@ export function useParameterFilter() {
         }
       })
     }
-  }, [query, appliedFilter, filteredCars.length, cars.length])
+  }, [query, appliedFilter, filteredCars.length, cars.length, setAppliedFilter])
 }

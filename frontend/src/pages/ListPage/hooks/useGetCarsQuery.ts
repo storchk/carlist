@@ -1,6 +1,7 @@
+import { useCallback, useEffect, useRef } from 'react'
+
 import { useAppContext } from '@/context'
 import { useGetCarsQuery } from '@/graphql'
-import { useCallback, useEffect, useRef } from 'react'
 
 export function useGetCars() {
   const { setCars, cars } = useAppContext()
@@ -45,7 +46,7 @@ export function useGetCars() {
     if (scrollTop + clientHeight >= scrollHeight && !loading) {
       await loadMoreCars()
     }
-  }, [loading])
+  }, [loading, loadMoreCars])
 
   useEffect(() => {
     const loadMore = async () => handleScroll()

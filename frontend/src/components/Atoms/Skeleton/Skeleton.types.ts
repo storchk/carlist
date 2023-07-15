@@ -1,4 +1,4 @@
-import { SizeType } from '@/styles'
+import type { SizeType } from '@/styles'
 
 export type SkeletonProps = {
   width?: string

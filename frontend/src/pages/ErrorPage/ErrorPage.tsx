@@ -1,7 +1,7 @@
 import { Heading, Typography } from '@/components'
 
 import { StyledErrorPage } from './ErrorPage.styled'
-import { ErrorPageProps } from './ErrorPage.types'
+import type { ErrorPageProps } from './ErrorPage.types'
 
 export const ErrorPage = ({ error }: ErrorPageProps): JSX.Element | null => {
   const { graphQLErrors, networkError } = error

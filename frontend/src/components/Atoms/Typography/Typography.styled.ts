@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import { mediaQuery } from '@/styles'
+
 import type { TypographyProps } from './Typography.types'
 
 export const StyledTypography = styled.div<TypographyProps>(

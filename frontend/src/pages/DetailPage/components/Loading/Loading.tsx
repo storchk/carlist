@@ -1,6 +1,8 @@
-import { Skeleton } from '@/components'
-import { StyledDetailPage, StyledDetailPageBadges } from '../../DetailPage.styled'
 import { memo } from 'react'
+
+import { Skeleton } from '@/components'
+
+import { StyledDetailPage, StyledDetailPageBadges } from '../../DetailPage.styled'
 export const Loading = memo((): JSX.Element => {
   const elements = new Array(4).fill(0)
 

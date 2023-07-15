@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import type { SkeletonProps } from './Skeleton.types'
 
 const skeleton = css(({ theme }) => {

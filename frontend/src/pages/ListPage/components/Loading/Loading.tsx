@@ -1,6 +1,8 @@
 import { memo } from 'react'
-import { StyledCarList, StyledLoadMoreArea, StyledListPagePageHeader } from '../../ListPage.styled'
+
 import { Skeleton } from '@/components'
+
+import { StyledCarList, StyledListPagePageHeader, StyledLoadMoreArea } from '../../ListPage.styled'
 export const Loading = memo((): JSX.Element => {
   const elements = new Array(6).fill(0)
 
