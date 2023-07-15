@@ -17,10 +17,6 @@ const setCars = (oldState: AppStateType, action: SetCarsAction): AppStateType =>
   }
 }
 
-const resetCars = (oldState: AppStateType): AppStateType => {
-  return { ...oldState, cars: oldState.cars, filteredCars: oldState.cars }
-}
-
 const setFilteredCars = (oldState: AppStateType, action: SetFilterCarsAction): AppStateType => {
   const { filter } = action.payload
   const filteredCars = oldState.cars.filter(car => {
@@ -68,9 +64,6 @@ export const reducer = (oldState: AppStateType, action: ReducerAction): AppState
   switch (action.type) {
     case ActionType.SetCars:
       return setCars(oldState, action)
-
-    case ActionType.ResetCars:
-      return resetCars(oldState)
 
     case ActionType.SetFilterCars:
       return setFilteredCars(oldState, action)

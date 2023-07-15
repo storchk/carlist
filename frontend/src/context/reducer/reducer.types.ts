@@ -2,7 +2,6 @@ import type { Car } from '@/graphql'
 
 export enum ActionType {
   SetCars = 'SetCars',
-  ResetCars = 'ResetCars',
   SetFilterCars = 'SetFilterCars',
   SetAppliedFilter = 'SetAppliedFilter',
 }
@@ -12,10 +11,6 @@ export type SetCarsAction = {
   payload: {
     cars: Car[]
   }
-}
-
-export type ResetCarsAction = {
-  type: ActionType.ResetCars
 }
 
 export type SetFilterCarsAction = {
@@ -38,8 +33,4 @@ export type SetAppliedFilterAction = {
   }
 }
 
-export type ReducerAction =
-  | SetCarsAction
-  | ResetCarsAction
-  | SetFilterCarsAction
-  | SetAppliedFilterAction
+export type ReducerAction = SetCarsAction | SetFilterCarsAction | SetAppliedFilterAction
