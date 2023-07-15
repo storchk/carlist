@@ -7,13 +7,19 @@ import { Button, CarCard, Heading, Typography } from '@/components'
 
 import { useAppContext } from '@/context'
 import { Filter } from './components/Filter'
-import { StyledCarList, StyledListPage, StyledLoadMoreArea } from './ListPage.styled'
+import {
+  StyledCarList,
+  StyledListPage,
+  StyledLoadMoreArea,
+  StyledListPagePageHeader,
+} from './ListPage.styled'
 import { ErrorPage } from '../ErrorPage'
+import { Loading } from './components/Loading'
 
 export const ListPage = (): JSX.Element => {
   const { cars, filteredCars, setCars } = useAppContext()
   const pageRef = useRef(0)
-  const { data, loading, error, fetchMore } = useGetCarsQuery({
+  const { data, error, loading, fetchMore } = useGetCarsQuery({
     variables: {
       limit: 10,
       offset: 0,
@@ -58,7 +64,7 @@ export const ListPage = (): JSX.Element => {
     return () => window.removeEventListener('scroll', loadMore)
   }, [handleScroll])
 
-  if (error) return <ErrorPage error={error} />
+  if (!loading && error) return <ErrorPage error={error} />
 
   return (
     <StyledListPage>
@@ -66,31 +72,38 @@ export const ListPage = (): JSX.Element => {
         <Filter />
       </aside>
       <section>
-        <Heading tag="h2">Autos</Heading>
-        <Typography tag="span">
-          {filteredCars.length} von {data?.cars.total}
-        </Typography>
-        <StyledCarList>
-          {filteredCars?.map(car => {
-            return (
-              <li key={car.id}>
-                <Link to={`/cars/${car.id}`}>
-                  <CarCard
-                    brand={car.brand}
-                    model={car.model}
-                    image={car.media[0].url}
-                    fuel={car.drivetrain.fuel || undefined}
-                    consumption={car.drivetrain.consumption}
-                    firstRegistration={car.vehicleHistory.registrationDate || undefined}
-                    performance={car.performance || undefined}
-                    gearbox={car.drivetrain.transmissionType || undefined}
-                  />
-                </Link>
-              </li>
-            )
-          })}
-        </StyledCarList>
-        {loading && <div>Loading...</div>}
+        {loading ? <Loading /> : null}
+
+        {!loading ? (
+          <>
+            <StyledListPagePageHeader>
+              <Heading tag="h2">Autos</Heading>
+              <Typography tag="span">
+                {filteredCars.length} von {data?.cars.total}
+              </Typography>
+            </StyledListPagePageHeader>
+            <StyledCarList>
+              {filteredCars?.map(car => {
+                return (
+                  <li key={car.id}>
+                    <Link to={`/cars/${car.id}`}>
+                      <CarCard
+                        brand={car.brand}
+                        model={car.model}
+                        image={car.media[0].url}
+                        fuel={car.drivetrain.fuel || undefined}
+                        consumption={car.drivetrain.consumption}
+                        firstRegistration={car.vehicleHistory.registrationDate || undefined}
+                        performance={car.performance || undefined}
+                        gearbox={car.drivetrain.transmissionType || undefined}
+                      />
+                    </Link>
+                  </li>
+                )
+              })}
+            </StyledCarList>
+          </>
+        ) : null}
         {!loading && cars.length !== data?.cars.total && (
           <StyledLoadMoreArea>
             <Button label="Load more" onClick={loadMoreCars} />

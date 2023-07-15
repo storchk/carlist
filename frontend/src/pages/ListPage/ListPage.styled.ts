@@ -97,3 +97,10 @@ export const StyledLoadMoreArea = styled.div(
     margin: ${theme.spacing.xxl} 0;
   `
 )
+
+export const StyledListPagePageHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+`

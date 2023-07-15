@@ -7,12 +7,13 @@ import { Badge, Heading, Gallery } from '@/components'
 import { StyledDetailPage, StyledDetailPageBadges } from './DetailPage.styled'
 import { NotFoundPage } from '../NotFoundPage'
 import { ErrorPage } from '../ErrorPage'
+import { Loading } from './components/Loading'
 
 export const DetailPage = (): JSX.Element => {
   const { id = '' } = useParams()
   const { data, loading, error } = useGetCarQuery({ variables: { id } })
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return <Loading />
   if (!data?.car) return <NotFoundPage />
   if (error) return <ErrorPage error={error} />
 

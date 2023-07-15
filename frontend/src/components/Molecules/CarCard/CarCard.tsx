@@ -23,7 +23,7 @@ export const CarCard = ({
 }: CarCardProps): JSX.Element => {
   return (
     <StyledCarCard>
-      <StyledCarCardImage src={image} alt="" />
+      <StyledCarCardImage src={image} alt="" loading="lazy" />
       <StyledCarCardContent>
         <Heading tag="h3" fontWeight="bold">
           {brand} {model}
