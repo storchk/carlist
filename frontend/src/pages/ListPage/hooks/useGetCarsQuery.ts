@@ -3,7 +3,7 @@ import { useGetCarsQuery } from '@/graphql'
 import { useCallback, useEffect, useRef } from 'react'
 
 export function useGetCars() {
-  const { setCars } = useAppContext()
+  const { setCars, cars } = useAppContext()
 
   const pageRef = useRef(0)
   const { data, error, loading, fetchMore } = useGetCarsQuery({
@@ -12,7 +12,9 @@ export function useGetCars() {
       offset: 0,
     },
     onCompleted: data => {
-      setCars(data.cars.items)
+      if (!cars.length) {
+        setCars(data.cars.items)
+      }
     },
   })
 
