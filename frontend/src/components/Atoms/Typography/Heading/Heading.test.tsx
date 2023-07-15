@@ -2,7 +2,6 @@ import { axe } from 'jest-axe'
 
 import { testing } from '../../../../testing'
 import { Heading } from './Heading'
-import type { HeadingProps } from './Heading.types'
 
 const { render, renderer } = testing
 const mockText = 'Lorem Ipsum'
