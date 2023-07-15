@@ -1,13 +1,15 @@
+import userEvent from '@testing-library/user-event'
 import { axe } from 'jest-axe'
+
+import { mockedCar1 } from '@/mocks'
+
 import { testing } from '../../../testing'
 import { Gallery } from './Gallery'
-import { mockedCar1 } from '@/mocks'
 const { render, screen, renderer } = testing
-import userEvent from '@testing-library/user-event'
 
 const mockedImages = mockedCar1.media.map(image => image.url)
 
-describe('Organism:Gallery', () => {
+describe('organism:Gallery', () => {
   it('renders the correct number of images', () => {
     render(<Gallery images={mockedImages} />)
     const imageElements = screen.getAllByRole('img')
