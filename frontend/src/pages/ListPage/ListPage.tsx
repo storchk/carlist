@@ -1,10 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
-
-import { useGetCarsQuery } from '@/graphql'
-
+import { Link } from 'react-router-dom'
 import { Button, CarCard, Heading, Typography } from '@/components'
-
 import { useAppContext } from '@/context'
 import { Filter } from './components/Filter'
 import {
@@ -16,54 +11,11 @@ import {
 import { ErrorPage } from '../ErrorPage'
 import { Loading } from './components/Loading'
 import { useParameterFilter } from './hooks/useParameterFilter'
+import { useGetCars } from './hooks/useGetCarsQuery'
 export const ListPage = (): JSX.Element => {
   useParameterFilter()
-  const { cars, filteredCars, setCars } = useAppContext()
-  const pageRef = useRef(0)
-  const { data, error, loading, fetchMore } = useGetCarsQuery({
-    variables: {
-      limit: 10,
-      offset: 0,
-    },
-    onCompleted: data => {
-      setCars(data.cars.items)
-    },
-  })
-
-  const loadMoreCars = useCallback(async () => {
-    pageRef.current += 1
-    await fetchMore({
-      variables: {
-        limit: 10,
-        offset: pageRef.current * 10,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult) return prev
-        setCars(fetchMoreResult.cars.items)
-        return {
-          cars: {
-            ...prev.cars,
-            items: [...prev.cars.items, ...fetchMoreResult.cars.items],
-          },
-        }
-      },
-    })
-  }, [fetchMore, setCars])
-
-  const handleScroll = useCallback(async () => {
-    const scrollHeight = document.documentElement.scrollHeight
-    const scrollTop = document.documentElement.scrollTop
-    const clientHeight = document.documentElement.clientHeight
-    if (scrollTop + clientHeight >= scrollHeight && !loading) {
-      await loadMoreCars()
-    }
-  }, [loading])
-
-  useEffect(() => {
-    const loadMore = async () => handleScroll()
-    window.addEventListener('scroll', loadMore)
-    return () => window.removeEventListener('scroll', loadMore)
-  }, [handleScroll])
+  const { data, loading, error, fetchMore } = useGetCars()
+  const { cars, filteredCars } = useAppContext()
 
   if (!loading && error) return <ErrorPage error={error} />
 
@@ -107,7 +59,7 @@ export const ListPage = (): JSX.Element => {
         ) : null}
         {!loading && cars.length !== data?.cars.total && (
           <StyledLoadMoreArea>
-            <Button label="Mehr Fahrzeuge laden" onClick={loadMoreCars} />
+            <Button label="Mehr Fahrzeuge laden" onClick={fetchMore} />
           </StyledLoadMoreArea>
         )}
       </section>
