@@ -8,7 +8,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "test": "jest --no-cache --silent",
+    "test": "jest --no-cache",
     "codegen": "pnpm graphql-code-generator --config ./codegen.ts"
   },
   "dependencies": {

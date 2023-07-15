@@ -1,7 +1,7 @@
 import type { Car } from '@/graphql'
+import { mockedCar1, mockedCar2 } from '@/mocks'
 
 import { initialState } from '../Context.constants'
-import { mockedCar1, mockedCar2 } from './mocks'
 import { reducer } from './reducer'
 import type { SetAppliedFilterAction, SetCarsAction, SetFilterCarsAction } from './reducer.types'
 import { ActionType } from './reducer.types'

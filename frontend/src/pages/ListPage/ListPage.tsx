@@ -6,7 +6,7 @@ import { useAppContext } from '@/context'
 import { ErrorPage } from '../ErrorPage'
 import { Filter } from './components/Filter'
 import { Loading } from './components/Loading'
-import { useGetCars } from './hooks/useGetCarsQuery'
+import { useGetCars } from './hooks/useGetCars'
 import { useParameterFilter } from './hooks/useParameterFilter'
 import {
   StyledCarList,
@@ -18,7 +18,6 @@ export const ListPage = (): JSX.Element => {
   useParameterFilter()
   const { data, loading, error, fetchMore } = useGetCars()
   const { cars, filteredCars } = useAppContext()
-
   if (!loading && error) return <ErrorPage error={error} />
 
   return (
@@ -37,26 +36,33 @@ export const ListPage = (): JSX.Element => {
                 {filteredCars.length} von {data?.cars.total}
               </Typography>
             </StyledListPagePageHeader>
-            <StyledCarList>
-              {filteredCars?.map(car => {
-                return (
-                  <li key={car.id}>
-                    <Link to={`/cars/${car.id}`}>
-                      <CarCard
-                        brand={car.brand}
-                        model={car.model}
-                        image={car.media[0].url}
-                        fuel={car.drivetrain.fuel || undefined}
-                        consumption={car.drivetrain.consumption}
-                        firstRegistration={car.vehicleHistory.registrationDate || undefined}
-                        performance={car.performance || undefined}
-                        gearbox={car.drivetrain.transmissionType || undefined}
-                      />
-                    </Link>
-                  </li>
-                )
-              })}
-            </StyledCarList>
+            {!filteredCars.length ? (
+              <>
+                <Typography>Keine Fahrzeuge vorhanden</Typography>
+              </>
+            ) : null}
+            {filteredCars.length ? (
+              <StyledCarList aria-label="carlist-cars">
+                {filteredCars?.map(car => {
+                  return (
+                    <li key={car.id}>
+                      <Link to={`/cars/${car.id}`}>
+                        <CarCard
+                          brand={car.brand}
+                          model={car.model}
+                          image={car.media[0].url}
+                          fuel={car.drivetrain.fuel || undefined}
+                          consumption={car.drivetrain.consumption}
+                          firstRegistration={car.vehicleHistory.registrationDate || undefined}
+                          performance={car.performance || undefined}
+                          gearbox={car.drivetrain.transmissionType || undefined}
+                        />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </StyledCarList>
+            ) : null}
           </>
         ) : null}
         {!loading && cars.length !== data?.cars.total && (

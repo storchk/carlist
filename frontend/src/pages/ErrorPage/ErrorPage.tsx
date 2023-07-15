@@ -7,7 +7,7 @@ export const ErrorPage = ({ error }: ErrorPageProps): JSX.Element | null => {
   const { graphQLErrors, networkError } = error
 
   return (
-    <StyledErrorPage>
+    <StyledErrorPage data-test="carlist-error-page">
       <Heading tag="h2">Da ist wohl ein Fehler aufgetreten</Heading>
       {graphQLErrors && graphQLErrors.length > 0 ? (
         <div>

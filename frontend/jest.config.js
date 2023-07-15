@@ -11,5 +11,6 @@ module.exports = {
     '^@/context': '<rootDir>/src/context/index.ts',
     '^@/theme': '<rootDir>/src/theme/index.ts',
     '^@/styles': '<rootDir>/src/styles/index.ts',
+    '^@/mocks': '<rootDir>/src/mocks/index.ts',
   },
 }

@@ -12,6 +12,7 @@ export default defineConfig({
       '@/context': fileURLToPath(new URL('./src/context/index.ts', import.meta.url)),
       '@/theme': fileURLToPath(new URL('./src/theme/index.ts', import.meta.url)),
       '@/styles': fileURLToPath(new URL('./src/styles/index.ts', import.meta.url)),
+      '@/mocks': fileURLToPath(new URL('./src/mocks/index.ts', import.meta.url)),
     },
   },
 })

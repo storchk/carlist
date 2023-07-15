@@ -3,6 +3,7 @@ module.exports = {
   globals: {
     JSX: true,
   },
+
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
