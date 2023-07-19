@@ -12,8 +12,7 @@ export const Loading = memo((): JSX.Element => {
         <Skeleton height="31px" width="60px" />
         <Skeleton height="21px" width="70px" />
       </StyledListPagePageHeader>
-
-      <StyledCarList aria-label="carlist-skeletons">
+      <StyledCarList>
         {elements?.map((_, index) => {
           return (
             <li key={`skeleton-${index}`}>

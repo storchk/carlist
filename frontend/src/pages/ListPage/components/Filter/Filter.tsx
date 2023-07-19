@@ -1,10 +1,10 @@
-import type { ChangeEvent } from 'react'
 import { useCallback } from 'react'
 
 import { Select } from '../../../../components/Atoms/Select'
 import { useAppContext } from '../../../../context'
 import { getAllBrands, getAllColors, getAllModels } from '../../ListPage.utils'
 import { getFilterValueByInput } from './Filter.utils'
+import { ChangeEventType } from './Filter.types'
 
 export const Filter = (): JSX.Element => {
   const { cars, setAppliedFilter } = useAppContext()
@@ -13,7 +13,7 @@ export const Filter = (): JSX.Element => {
   const allColors = getAllColors(cars)
 
   const onChangeBrand = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
+    (event: ChangeEventType) => {
       setAppliedFilter({
         key: 'brand',
         value: getFilterValueByInput(event),
@@ -21,9 +21,9 @@ export const Filter = (): JSX.Element => {
     },
     [setAppliedFilter]
   )
-
+  // TODO create type for ChangeEventType
   const onChangeModel = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
+    (event: ChangeEventType) => {
       setAppliedFilter({
         key: 'model',
         value: getFilterValueByInput(event),
@@ -33,7 +33,7 @@ export const Filter = (): JSX.Element => {
   )
 
   const onChangeGear = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
+    (event: ChangeEventType) => {
       setAppliedFilter({
         key: 'color',
         value: getFilterValueByInput(event),

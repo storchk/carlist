@@ -88,16 +88,6 @@ export const StyledCarList = styled.ul(
   `
 )
 
-export const StyledLoadMoreArea = styled.div(
-  ({ theme }) => css`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: ${theme.spacing.xxl} 0;
-  `
-)
-
 export const StyledListPagePageHeader = styled.div`
   display: flex;
   flex-direction: row;

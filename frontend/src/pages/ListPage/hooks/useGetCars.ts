@@ -58,6 +58,5 @@ export function useGetCars() {
     data,
     loading,
     error,
-    fetchMore: loadMoreCars,
   }
 }

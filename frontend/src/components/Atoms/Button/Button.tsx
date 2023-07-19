@@ -5,7 +5,7 @@ import { StyledButton } from './Button.styled'
 import type { ButtonProps } from './Button.types'
 
 export const Button = ({ label, onClick }: ButtonProps): JSX.Element => {
-  const handleOnClick = (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+  const handleOnClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation()
 
     if (onClick) {

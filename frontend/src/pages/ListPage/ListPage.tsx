@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Button, CarCard, Heading, Typography } from '@/components'
+import { CarCard, Heading, Typography } from '@/components'
 import { useAppContext } from '@/context'
 
 import { ErrorPage } from '../ErrorPage'
@@ -8,16 +8,11 @@ import { Filter } from './components/Filter'
 import { Loading } from './components/Loading'
 import { useGetCars } from './hooks/useGetCars'
 import { useParameterFilter } from './hooks/useParameterFilter'
-import {
-  StyledCarList,
-  StyledListPage,
-  StyledListPagePageHeader,
-  StyledLoadMoreArea,
-} from './ListPage.styled'
+import { StyledCarList, StyledListPage, StyledListPagePageHeader } from './ListPage.styled'
 export const ListPage = (): JSX.Element => {
   useParameterFilter()
-  const { data, loading, error, fetchMore } = useGetCars()
-  const { cars, filteredCars } = useAppContext()
+  const { data, loading, error } = useGetCars()
+  const { filteredCars } = useAppContext()
   if (!loading && error) return <ErrorPage error={error} />
 
   return (
@@ -46,7 +41,10 @@ export const ListPage = (): JSX.Element => {
                 {filteredCars?.map(car => {
                   return (
                     <li key={car.id}>
-                      <Link to={`/cars/${car.id}`}>
+                      <Link
+                        aria-label={`Link zur ${car.brand} ${car.model} Detailseite`}
+                        to={`/cars/${car.id}`}
+                      >
                         <CarCard
                           brand={car.brand}
                           model={car.model}
@@ -65,11 +63,6 @@ export const ListPage = (): JSX.Element => {
             ) : null}
           </>
         ) : null}
-        {!loading && cars.length !== data?.cars.total && (
-          <StyledLoadMoreArea>
-            <Button label="Mehr Fahrzeuge laden" onClick={fetchMore} />
-          </StyledLoadMoreArea>
-        )}
       </section>
     </StyledListPage>
   )

@@ -2,12 +2,11 @@ import { axe } from 'jest-axe'
 
 import { testing } from '../../../testing'
 import { Badge } from './Badge'
-import type { BadgeProps } from './Badge.types'
 
 const { render, screen, renderer } = testing
 const label = 'Lorem Ipsum'
 
-const renderComponent = (props?: Partial<BadgeProps>) => render(<Badge label={label} {...props} />)
+const renderComponent = () => render(<Badge label={label} />)
 
 describe('atoms: Badge', () => {
   it('should render badge with text', () => {
