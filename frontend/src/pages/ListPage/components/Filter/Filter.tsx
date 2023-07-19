@@ -4,6 +4,7 @@ import { useCallback } from 'react'
 import { Select } from '../../../../components/Atoms/Select'
 import { useAppContext } from '../../../../context'
 import { getAllBrands, getAllColors, getAllModels } from '../../ListPage.utils'
+import { getFilterValueByInput } from './Filter.utils'
 
 export const Filter = (): JSX.Element => {
   const { cars, setAppliedFilter } = useAppContext()
@@ -15,7 +16,7 @@ export const Filter = (): JSX.Element => {
     (event: ChangeEvent<HTMLSelectElement>) => {
       setAppliedFilter({
         key: 'brand',
-        value: event.target.value?.toLocaleLowerCase() === 'beliebig' ? null : event.target.value,
+        value: getFilterValueByInput(event),
       })
     },
     [setAppliedFilter]
@@ -25,7 +26,7 @@ export const Filter = (): JSX.Element => {
     (event: ChangeEvent<HTMLSelectElement>) => {
       setAppliedFilter({
         key: 'model',
-        value: event.target.value?.toLocaleLowerCase() === 'beliebig' ? null : event.target.value,
+        value: getFilterValueByInput(event),
       })
     },
     [setAppliedFilter]
@@ -35,7 +36,7 @@ export const Filter = (): JSX.Element => {
     (event: ChangeEvent<HTMLSelectElement>) => {
       setAppliedFilter({
         key: 'color',
-        value: event.target.value?.toLocaleLowerCase() === 'beliebig' ? null : event.target.value,
+        value: getFilterValueByInput(event),
       })
     },
     [setAppliedFilter]

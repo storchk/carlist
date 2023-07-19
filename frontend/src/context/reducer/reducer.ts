@@ -19,6 +19,9 @@ const setCars = (oldState: AppStateType, action: SetCarsAction): AppStateType =>
 
 const setFilteredCars = (oldState: AppStateType, action: SetFilterCarsAction): AppStateType => {
   const { filter } = action.payload
+
+  if (!filter.length) return { ...oldState, filteredCars: [...oldState.cars] }
+
   const filteredCars = oldState.cars.filter(car => {
     return filter.every(f => {
       const carValue = _.get(car, f.key)
@@ -32,7 +35,7 @@ const setFilteredCars = (oldState: AppStateType, action: SetFilterCarsAction): A
 
 const setAppliedFilter = (oldState: AppStateType, action: SetAppliedFilterAction): AppStateType => {
   // if filter value is null, remove it
-  if (action.payload.filter.value === null) {
+  if (action.payload.filter.value === 'all') {
     return {
       ...oldState,
       appliedFilter: [

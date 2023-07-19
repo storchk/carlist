@@ -40,7 +40,7 @@ describe('reducer', () => {
 
     const action: SetAppliedFilterAction = {
       type: ActionType.SetAppliedFilter,
-      payload: { filter: { key: 'brand', value: null } },
+      payload: { filter: { key: 'brand', value: 'all' } },
     }
     const expectedState = {
       ...initialState,
