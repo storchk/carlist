@@ -7,7 +7,7 @@ import type { ChangeEventType } from './Filter.types'
 import { getAllBrands, getFilterValueByInput } from './Filter.utils'
 
 export const Filter = (): JSX.Element => {
-  const { appliedFilter, setAppliedFilter } = useAppContext()
+  const { appliedFilter = [], setAppliedFilter } = useAppContext()
   const allBrands = getAllBrands()
   const allModels = useGetAllModels()
   const allColors = useGetAllColors()

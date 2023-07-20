@@ -16,6 +16,7 @@ let mockedUseAppContext = jest.fn().mockImplementation(() => {
     setCars: jest.fn(),
     cars: [],
     filteredCars: [],
+    appliedFilters: [],
   }
 })
 
@@ -97,6 +98,7 @@ describe('listPage', () => {
           setCars: jest.fn(),
           cars: mockedCards,
           filteredCars: mockedCards,
+          appliedFilters: [],
         }
       })
     )
@@ -114,6 +116,7 @@ describe('listPage', () => {
           setCars: jest.fn(),
           cars: mockedCards,
           filteredCars: [],
+          appliedFilters: [],
         }
       })
     )
