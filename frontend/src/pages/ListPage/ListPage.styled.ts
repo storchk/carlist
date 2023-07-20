@@ -81,9 +81,6 @@ export const StyledCarList = styled.ul(
       }
 
       margin-bottom: ${theme.spacing.md};
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   `
 )
