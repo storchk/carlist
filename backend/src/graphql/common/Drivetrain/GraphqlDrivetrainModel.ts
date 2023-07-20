@@ -8,8 +8,8 @@ export class GraphqlDrivetrainModel {
   @Field(() => String, { nullable: true })
   fuel: string | null
 
-  @Field(() => String)
-  consumption: string
+  @Field(() => String, { nullable: true })
+  consumption: string | null
 
   @Field(() => String, { nullable: true })
   transmissionType: string | null
@@ -19,7 +19,9 @@ export class GraphqlDrivetrainModel {
 
   constructor({ fuel, consumption, transmission_type, cc }: Offer['drivetrain']) {
     this.fuel = getFuelType(fuel)
-    this.consumption = `${consumption.consumption_combined} ${consumption.unit}`
+    this.consumption = consumption.consumption_combined
+      ? `${consumption.consumption_combined} ${consumption.unit}`
+      : null
     this.transmissionType = getTransmissionByType(transmission_type)
     this.cc = `${cc} ccm`
   }
