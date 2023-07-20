@@ -7,7 +7,7 @@ import { useGetAllModels, useGetAllColors } from './Filter.hooks'
 import { ChangeEventType } from './Filter.types'
 
 export const Filter = (): JSX.Element => {
-  const { setAppliedFilter } = useAppContext()
+  const { appliedFilter, setAppliedFilter } = useAppContext()
   const allBrands = getAllBrands()
   const allModels = useGetAllModels()
   const allColors = useGetAllColors()
@@ -50,6 +50,7 @@ export const Filter = (): JSX.Element => {
         label="Marke"
         options={allBrands.map(item => ({ value: item, label: item }))}
         onChange={onChangeBrand}
+        selected={appliedFilter.find(filter => filter.key === 'brand')?.value || 'all'}
       />
       <Select
         id="models"
@@ -57,6 +58,7 @@ export const Filter = (): JSX.Element => {
         label="Model"
         options={allModels.map(item => ({ value: item, label: item }))}
         onChange={onChangeModel}
+        selected={appliedFilter.find(filter => filter.key === 'models')?.value || 'all'}
       />
       <Select
         id="color"
@@ -64,6 +66,7 @@ export const Filter = (): JSX.Element => {
         label="Farbe"
         options={allColors.map(item => ({ value: item, label: item }))}
         onChange={onChangeGear}
+        selected={appliedFilter.find(filter => filter.key === 'color')?.value || 'all'}
       />
     </>
   )

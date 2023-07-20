@@ -2,7 +2,7 @@ import { Typography } from '../Typography'
 import { StyledSelect } from './Select.styled'
 import type { SelectProps } from './Select.types'
 
-export const Select = ({ options, label, id, ...props }: SelectProps) => {
+export const Select = ({ options, label, id, selected, ...props }: SelectProps) => {
   return (
     <StyledSelect>
       <label htmlFor={id}>
@@ -15,7 +15,7 @@ export const Select = ({ options, label, id, ...props }: SelectProps) => {
           {label}
         </Typography>
       </label>
-      <select id={id} {...props}>
+      <select id={id} defaultValue={selected} {...props}>
         {options.map((option, index) => (
           <option key={index} value={option.value?.toLocaleLowerCase()}>
             {option.label}

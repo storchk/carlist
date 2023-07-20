@@ -8,6 +8,7 @@ export type SelectProps = {
   label: string
   name: string
   id: string
+  selected: string
   options: SelectOptionProps[]
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void
 }
