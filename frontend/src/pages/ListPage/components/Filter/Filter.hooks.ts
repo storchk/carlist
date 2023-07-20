@@ -14,5 +14,19 @@ export function useGetAllColors() {
 export function useGetAllModels() {
   const { filteredCars } = useAppContext()
   const models = filteredCars.map(car => car.model)
-  return ['Beliebig', ...models.filter((item, index) => models.indexOf(item) === index)]
+  return [
+    'Beliebig',
+    ...models.filter((item, index) => Boolean(item) && models.indexOf(item) === index),
+  ]
+}
+
+export function useGetAllFuels() {
+  const { filteredCars } = useAppContext()
+  const fuels = filteredCars.map(car => car.drivetrain.fuel)
+  return [
+    'Beliebig',
+    ...fuels.filter(
+      (item, index): item is string => Boolean(item) && fuels.indexOf(item) === index
+    ),
+  ]
 }

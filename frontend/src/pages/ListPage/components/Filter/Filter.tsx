@@ -1,16 +1,17 @@
-import { useCallback } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 
 import { Select } from '../../../../components/Atoms/Select'
 import { useAppContext } from '../../../../context'
-import { useGetAllColors, useGetAllModels } from './Filter.hooks'
+import { useGetAllColors, useGetAllFuels, useGetAllModels } from './Filter.hooks'
 import type { ChangeEventType } from './Filter.types'
 import { getAllBrands, getFilterValueByInput } from './Filter.utils'
 
-export const Filter = (): JSX.Element => {
+export const Filter = memo((): JSX.Element => {
   const { appliedFilter = [], setAppliedFilter } = useAppContext()
   const allBrands = getAllBrands()
   const allModels = useGetAllModels()
   const allColors = useGetAllColors()
+  const allFuels = useGetAllFuels()
 
   const onChangeBrand = useCallback(
     (event: ChangeEventType) => {
@@ -32,7 +33,7 @@ export const Filter = (): JSX.Element => {
     [setAppliedFilter]
   )
 
-  const onChangeGear = useCallback(
+  const onChangeColor = useCallback(
     (event: ChangeEventType) => {
       setAppliedFilter({
         key: 'color',
@@ -42,32 +43,72 @@ export const Filter = (): JSX.Element => {
     [setAppliedFilter]
   )
 
+  const onChangeFuel = useCallback(
+    (event: ChangeEventType) => {
+      setAppliedFilter({
+        key: 'drivetrain.fuel',
+        value: getFilterValueByInput(event),
+      })
+    },
+    [setAppliedFilter]
+  )
+
+  const filter = useMemo(
+    () => [
+      {
+        id: 'brands',
+        label: 'Marke',
+        options: allBrands,
+        onChange: onChangeBrand,
+        selectedKey: 'brand',
+      },
+      {
+        id: 'models',
+        label: 'Model',
+        options: allModels,
+        onChange: onChangeModel,
+        selectedKey: 'models',
+      },
+      {
+        id: 'color',
+        label: 'Farbe',
+        options: allColors,
+        onChange: onChangeColor,
+        selectedKey: 'color',
+      },
+      {
+        id: 'fuel',
+        label: 'Kraftstoff',
+        options: allFuels,
+        onChange: onChangeFuel,
+        selectedKey: 'fuel',
+      },
+    ],
+    [
+      allBrands,
+      allModels,
+      allColors,
+      allFuels,
+      onChangeBrand,
+      onChangeModel,
+      onChangeColor,
+      onChangeFuel,
+    ]
+  )
+
   return (
     <>
-      <Select
-        id="brands"
-        name="brands"
-        label="Marke"
-        options={allBrands.map(item => ({ value: item, label: item }))}
-        onChange={onChangeBrand}
-        selected={appliedFilter.find(filter => filter.key === 'brand')?.value || 'all'}
-      />
-      <Select
-        id="models"
-        name="models"
-        label="Model"
-        options={allModels.map(item => ({ value: item, label: item }))}
-        onChange={onChangeModel}
-        selected={appliedFilter.find(filter => filter.key === 'models')?.value || 'all'}
-      />
-      <Select
-        id="color"
-        name="color"
-        label="Farbe"
-        options={allColors.map(item => ({ value: item, label: item }))}
-        onChange={onChangeGear}
-        selected={appliedFilter.find(filter => filter.key === 'color')?.value || 'all'}
-      />
+      {filter.map(({ id, label, options, onChange, selectedKey }) => (
+        <Select
+          key={id}
+          id={id}
+          name={id}
+          label={label}
+          options={options.map(item => ({ value: item, label: item }))}
+          onChange={onChange}
+          selected={appliedFilter.find(filter => filter.key === selectedKey)?.value || 'all'}
+        />
+      ))}
     </>
   )
-}
+})

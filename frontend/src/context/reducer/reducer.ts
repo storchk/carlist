@@ -25,7 +25,6 @@ const setFilteredCars = (oldState: AppStateType, action: SetFilterCarsAction): A
   const filteredCars = oldState.cars.filter(car => {
     return filter.every(f => {
       const carValue = _.get(car, f.key)
-
       return carValue && carValue.toLowerCase() === f.value?.toLocaleLowerCase()
     })
   })
