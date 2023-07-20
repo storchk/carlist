@@ -21,7 +21,7 @@ export const Filter = (): JSX.Element => {
     },
     [setAppliedFilter]
   )
-  // TODO create type for ChangeEventType
+
   const onChangeModel = useCallback(
     (event: ChangeEventType) => {
       setAppliedFilter({
