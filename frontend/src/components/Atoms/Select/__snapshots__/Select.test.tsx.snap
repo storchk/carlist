@@ -42,6 +42,7 @@ exports[`atoms: Select snapshot 1`] = `
     </span>
   </label>
   <select
+    defaultValue="lorem-ipsum"
     id="test-id"
     name="test-name"
     onChange={[Function]}
