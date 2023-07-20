@@ -1,13 +1,29 @@
+import { ThemeType } from '@/theme'
 import styled, { css } from 'styled-components'
 
+function getBadgeColor({ theme, color }: { theme: ThemeType; color: string }) {
+  switch (color) {
+    case 'primary':
+      return css`
+        background-color: ${theme.colors.primary};
+        color: ${theme.colors.contrast0};
+      `
+    case 'neutral':
+    default:
+      return css`
+        background-color: ${theme.colors.contrast200};
+        color: ${theme.colors.contrast700};
+      `
+  }
+}
 export const StyledBadge = styled.span(
-  ({ theme }) => css`
+  ({ theme, color = 'neutral' }) => css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: ${theme.spacing.xs} ${theme.spacing.sm};
-    background-color: ${theme.colors.contrast200};
-    color: ${theme.colors.contrast700};
     border-radius: ${theme.spacing.sm};
+
+    ${getBadgeColor({ theme, color })}
   `
 )

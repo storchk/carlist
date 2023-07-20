@@ -15,10 +15,16 @@ describe('atoms: Badge', () => {
     expect(text).toBeInTheDocument()
   })
 
-  it('snapshot', () => {
+  it('snapshot | color: neutral', () => {
     const view = renderer(<Badge label={label} />)
     expect(view).toMatchSnapshot()
   })
+
+  it('snapshot | color: primary', () => {
+    const view = renderer(<Badge label={label} />)
+    expect(view).toMatchSnapshot()
+  })
+
   it('a11y - No violations detected', async () => {
     const { container } = renderComponent()
     await expect(axe(container)).resolves.toHaveNoViolations()
