@@ -2,15 +2,15 @@ import { useCallback } from 'react'
 
 import { Select } from '../../../../components/Atoms/Select'
 import { useAppContext } from '../../../../context'
-import { getAllBrands, getAllColors, getAllModels } from '../../ListPage.utils'
-import { getFilterValueByInput } from './Filter.utils'
+import { getFilterValueByInput, getAllBrands } from './Filter.utils'
+import { useGetAllModels, useGetAllColors } from './Filter.hooks'
 import { ChangeEventType } from './Filter.types'
 
 export const Filter = (): JSX.Element => {
-  const { cars, setAppliedFilter } = useAppContext()
+  const { setAppliedFilter } = useAppContext()
   const allBrands = getAllBrands()
-  const allModels = getAllModels(cars)
-  const allColors = getAllColors(cars)
+  const allModels = useGetAllModels()
+  const allColors = useGetAllColors()
 
   const onChangeBrand = useCallback(
     (event: ChangeEventType) => {

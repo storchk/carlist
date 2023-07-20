@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import { Skeleton } from '@/components'
 
-import { StyledCarList, StyledListPagePageHeader, StyledLoadMoreArea } from '../../ListPage.styled'
+import { StyledCarList, StyledListPagePageHeader } from '../../ListPage.styled'
 export const Loading = memo((): JSX.Element => {
   const elements = new Array(6).fill(0)
 
@@ -21,9 +21,6 @@ export const Loading = memo((): JSX.Element => {
           )
         })}
       </StyledCarList>
-      <StyledLoadMoreArea>
-        <Skeleton height="50px" width="120px" />
-      </StyledLoadMoreArea>
     </>
   )
 })
