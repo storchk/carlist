@@ -54,6 +54,7 @@ export const ListPage = (): JSX.Element => {
                           firstRegistration={car.vehicleHistory.registrationDate || undefined}
                           performance={car.performance || undefined}
                           gearbox={car.drivetrain.transmissionType || undefined}
+                          color={car.color || undefined}
                         />
                       </Link>
                     </li>

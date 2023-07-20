@@ -18,6 +18,7 @@ export const CarCard = ({
   firstRegistration,
   performance,
   gearbox,
+  color,
 }: CarCardProps): JSX.Element => {
   return (
     <StyledCarCard>
@@ -40,6 +41,10 @@ export const CarCard = ({
             {
               label: 'Verbrauch',
               value: consumption,
+            },
+            {
+              label: 'Farbe',
+              value: color,
             },
           ]}
         />

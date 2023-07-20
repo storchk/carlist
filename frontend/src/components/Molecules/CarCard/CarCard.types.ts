@@ -7,4 +7,5 @@ export type CarCardProps = {
   firstRegistration?: string
   performance?: string
   gearbox?: string
+  color?: string
 }
