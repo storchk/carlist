@@ -14,6 +14,7 @@ const mockOptions: SelectProps['options'] = [
 
 const component = (
   <Select
+    selected="lorem-ipsum"
     options={mockOptions}
     id="test-id"
     label="test-label"
