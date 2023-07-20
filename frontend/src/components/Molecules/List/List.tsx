@@ -1,12 +1,12 @@
-import { StyledList, StyledListItem } from './List.styled'
-import { ListProps } from './List.types'
 import { Typography } from '../../Atoms/Typography'
+import { StyledList, StyledListItem } from './List.styled'
+import type { ListProps } from './List.types'
 export const List = ({ items }: ListProps): JSX.Element | null => {
   if (!items) return null
   return (
     <StyledList>
       {items.map((item, index) => {
-        const isDisabled = !Boolean(item.value)
+        const isDisabled = !item.value
 
         return (
           <StyledListItem key={index} $isDisabled={isDisabled}>

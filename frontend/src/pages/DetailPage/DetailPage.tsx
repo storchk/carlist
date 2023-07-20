@@ -9,8 +9,8 @@ import { Loading } from './components/Loading'
 import {
   StyledDetailPage,
   StyledDetailPageBadges,
-  StyledVehicleTypeBadge,
   StyledPrice,
+  StyledVehicleTypeBadge,
 } from './DetailPage.styled'
 
 export const DetailPage = (): JSX.Element => {

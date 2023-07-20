@@ -1,5 +1,6 @@
-import { ThemeType } from '@/theme'
 import styled, { css } from 'styled-components'
+
+import type { ThemeType } from '@/theme'
 
 function getBadgeColor({ theme, color }: { theme: ThemeType; color: string }) {
   switch (color) {

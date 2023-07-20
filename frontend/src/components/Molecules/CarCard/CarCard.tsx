@@ -1,5 +1,6 @@
 import { Badge } from '../../Atoms/Badge'
-import { Heading, Typography } from '../../Atoms/Typography'
+import { Heading } from '../../Atoms/Typography'
+import { List } from '../List'
 import {
   StyledCarCard,
   StyledCarCardContent,
@@ -7,7 +8,6 @@ import {
   StyledCarCardImage,
 } from './CarCard.styled'
 import type { CarCardProps } from './CarCard.types'
-import { List } from '../List'
 
 export const CarCard = ({
   brand,

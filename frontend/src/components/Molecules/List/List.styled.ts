@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
-import { StyledListItemProps } from './List.types'
+
+import type { StyledListItemProps } from './List.types'
 
 export const StyledList = styled.ul(
   ({ theme }) => css`

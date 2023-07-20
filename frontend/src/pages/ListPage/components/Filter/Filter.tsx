@@ -2,9 +2,9 @@ import { useCallback } from 'react'
 
 import { Select } from '../../../../components/Atoms/Select'
 import { useAppContext } from '../../../../context'
-import { getFilterValueByInput, getAllBrands } from './Filter.utils'
-import { useGetAllModels, useGetAllColors } from './Filter.hooks'
-import { ChangeEventType } from './Filter.types'
+import { useGetAllColors, useGetAllModels } from './Filter.hooks'
+import type { ChangeEventType } from './Filter.types'
+import { getAllBrands, getFilterValueByInput } from './Filter.utils'
 
 export const Filter = (): JSX.Element => {
   const { appliedFilter, setAppliedFilter } = useAppContext()
