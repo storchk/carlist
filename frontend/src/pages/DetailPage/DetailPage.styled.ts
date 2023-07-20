@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components'
 
 import { mediaQuery } from '@/styles'
+import { Badge } from '@/components'
 
 export const StyledDetailPage = styled.main(
   ({ theme }) => css`
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     margin: ${theme.spacing.lg} ${theme.spacing.md};
@@ -16,8 +18,6 @@ export const StyledDetailPage = styled.main(
       margin: ${theme.spacing.lg} ${theme.spacing.xxxxl};
     }
 
-    aside {
-    }
     section {
       padding: ${theme.spacing.lg};
       background-color: ${theme.colors.contrast0};
@@ -26,11 +26,30 @@ export const StyledDetailPage = styled.main(
   `
 )
 
+export const StyledVehicleTypeBadge = styled(Badge)(
+  ({ theme }) => css`
+    position: absolute;
+    top: -${theme.spacing.sm};
+    right: -${theme.spacing.sm};
+  `
+)
+
 export const StyledDetailPageBadges = styled.div(
   ({ theme }) => css`
     display: flex;
     flex-wrap: wrap;
     gap: ${theme.spacing.sm};
-    margin: ${theme.spacing.md} 0;
+    margin: ${theme.spacing.lg} 0;
+  `
+)
+
+export const StyledPrice = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: ${theme.spacing.sm};
+    margin-top: ${theme.spacing.lg};
   `
 )

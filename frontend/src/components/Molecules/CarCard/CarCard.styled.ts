@@ -28,15 +28,3 @@ export const StyledCarCardContentBadges = styled.div(
     margin: ${theme.spacing.md} 0;
   `
 )
-export const StyledCarCardContentCarInfo = styled.ul(
-  ({ theme }) => css`
-    margin: ${theme.spacing.xs} 0;
-
-    li {
-      margin-bottom: ${theme.spacing.xxs};
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  `
-)

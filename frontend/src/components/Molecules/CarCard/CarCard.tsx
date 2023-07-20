@@ -4,12 +4,10 @@ import {
   StyledCarCard,
   StyledCarCardContent,
   StyledCarCardContentBadges,
-  StyledCarCardContentCarInfo,
   StyledCarCardImage,
 } from './CarCard.styled'
 import type { CarCardProps } from './CarCard.types'
-
-const disabledColor = 'contrast500'
+import { List } from '../List'
 
 export const CarCard = ({
   brand,
@@ -33,36 +31,18 @@ export const CarCard = ({
           {performance ? <Badge label={`${performance}`} /> : null}
           {gearbox ? <Badge label={gearbox} /> : null}
         </StyledCarCardContentBadges>
-
-        <StyledCarCardContentCarInfo>
-          <li>
-            <Typography
-              tag="span"
-              fontWeight="bold"
-              color={firstRegistration ? 'inherit' : disabledColor}
-            >
-              Erstzulassung:
-            </Typography>
-            <Typography tag="span" color={firstRegistration ? 'inherit' : disabledColor}>
-              {' '}
-              {firstRegistration || 'k. A.'}
-            </Typography>
-          </li>
-
-          <li>
-            <Typography
-              tag="span"
-              fontWeight="bold"
-              color={consumption ? 'inherit' : disabledColor}
-            >
-              Verbrauch:
-            </Typography>
-            <Typography tag="span" color={consumption ? 'inherit' : disabledColor}>
-              {' '}
-              {consumption || 'k. A.'}
-            </Typography>
-          </li>
-        </StyledCarCardContentCarInfo>
+        <List
+          items={[
+            {
+              label: 'Erstzulassung',
+              value: firstRegistration,
+            },
+            {
+              label: 'Verbrauch',
+              value: consumption,
+            },
+          ]}
+        />
       </StyledCarCardContent>
     </StyledCarCard>
   )
