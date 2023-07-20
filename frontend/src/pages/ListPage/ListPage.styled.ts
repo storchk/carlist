@@ -76,7 +76,7 @@ export const StyledCarList = styled.ul(
         width: calc(50% - ${theme.spacing.sm});
       }
       ${mediaQuery.md} {
-        height: 500px;
+        min-height: 500px;
         width: calc(33.333% - ${theme.spacing.sm});
       }
 
